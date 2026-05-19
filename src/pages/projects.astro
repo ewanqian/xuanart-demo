@@ -10,13 +10,18 @@ const categories = [...new Set(projects.map((project) => project.category))];
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Projects</p>
-      <h1>项目与内容线</h1>
-      <p class="lead">图域空间项目、Virtura 内容线，以及正在整理的 XR / Vision Pro / 空间计算 Demo。</p>
+      <h1>项目图库与内容线</h1>
+      <p class="lead">图域空间项目、Virtura 作品线、成员作品与展会精选素材。</p>
+      <div class="search-panel">
+        <label for="project-search">搜索项目 / Search</label>
+        <input id="project-search" type="search" placeholder="输入项目、品牌、作者或关键词" data-project-search />
+        <span data-project-count>{projects.length} entries</span>
+      </div>
     </div>
   </section>
 
   {categories.map((category) => (
-    <section class="section" id={category.toLowerCase().replaceAll(" ", "-").replaceAll("/", "")}>
+    <section class="section" id={category.toLowerCase().replaceAll(" ", "-").replaceAll("/", "")} data-project-section>
       <div class="container">
         <div class="category-head">
           <p class="eyebrow">{category}</p>
@@ -32,6 +37,30 @@ const categories = [...new Set(projects.map((project) => project.category))];
   ))}
 </Layout>
 
+<script>
+  const input = document.querySelector("[data-project-search]");
+  const cards = Array.from(document.querySelectorAll("[data-project-card]"));
+  const sections = Array.from(document.querySelectorAll("[data-project-section]"));
+  const counter = document.querySelector("[data-project-count]");
+
+  const update = () => {
+    const query = input?.value.trim().toLowerCase() ?? "";
+    let visible = 0;
+    cards.forEach((card) => {
+      const match = !query || card.dataset.search?.includes(query);
+      card.toggleAttribute("hidden", !match);
+      if (match) visible += 1;
+    });
+    sections.forEach((section) => {
+      const hasVisibleCard = section.querySelector("[data-project-card]:not([hidden])");
+      section.toggleAttribute("hidden", !hasVisibleCard);
+    });
+    if (counter) counter.textContent = `${visible} entries`;
+  };
+
+  input?.addEventListener("input", update);
+</script>
+
 <style>
   .page-hero {
     padding: 94px 0 58px;
@@ -43,6 +72,37 @@ const categories = [...new Set(projects.map((project) => project.category))];
     font-size: clamp(34px, 6.5vw, 78px);
     line-height: 1.08;
     font-weight: 560;
+  }
+
+  .search-panel {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+    max-width: 760px;
+    margin-top: 30px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.62);
+  }
+
+  .search-panel label,
+  .search-panel span {
+    color: var(--blue);
+    font-size: 12px;
+  }
+
+  .search-panel input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 10px 2px;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    outline: none;
   }
 
   .category-head {
@@ -61,12 +121,13 @@ const categories = [...new Set(projects.map((project) => project.category))];
 
   .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
     margin-top: 24px;
   }
 
   @media (max-width: 980px) {
+    .search-panel,
     .project-grid {
       grid-template-columns: 1fr;
     }

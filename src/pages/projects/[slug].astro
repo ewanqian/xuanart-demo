@@ -10,6 +10,8 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+const gallery = project.gallery ?? [];
+const credits = project.credits ?? [];
 ---
 
 <Layout title={`${project.title} | XUAN Spatial Perception`}>
@@ -30,6 +32,11 @@ const { project } = Astro.props;
           </dl>
         </aside>
       </div>
+      {project.cover && (
+        <figure class="project-cover">
+          <img src={project.cover} alt={`${project.title} cover`} />
+        </figure>
+      )}
     </section>
 
     <section class="section">
@@ -43,6 +50,19 @@ const { project } = Astro.props;
           <div class="tag-list">
             {project.keywords.map((tag) => <span class="tag">{tag}</span>)}
           </div>
+          {credits.length > 0 && (
+            <div class="credit-list">
+              <p class="eyebrow">Credits</p>
+              <dl>
+                {credits.map((credit) => (
+                  <div>
+                    <dt>{credit.role}</dt>
+                    <dd>{credit.name}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          )}
           <div class="button-row">
             <a class="button secondary" href="/projects">返回项目</a>
             <a class="button" href="/contact">预约沟通</a>
@@ -50,12 +70,43 @@ const { project } = Astro.props;
         </div>
       </div>
     </section>
+
+    {gallery.length > 0 && (
+      <section class="section gallery-section">
+        <div class="container">
+          <p class="eyebrow">Gallery</p>
+          <h2 class="section-title">项目图集</h2>
+          <div class="gallery-grid">
+            {gallery.map((image, index) => (
+              <figure>
+                <img src={image} alt={`${project.title} gallery ${index + 1}`} loading="lazy" />
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
   </article>
 </Layout>
 
 <style>
   .project-hero {
     padding: 94px 0 76px;
+  }
+
+  .project-cover {
+    width: min(calc(100% - 32px), var(--max));
+    margin: 0 auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.62);
+  }
+
+  .project-cover img {
+    width: 100%;
+    aspect-ratio: 16 / 9.3;
+    object-fit: cover;
   }
 
   h1 {
@@ -98,5 +149,45 @@ const { project } = Astro.props;
     color: var(--muted);
     font-size: 17px;
     line-height: 1.9;
+  }
+
+  .credit-list {
+    margin-top: 32px;
+  }
+
+  .credit-list dl {
+    border-top: 1px solid var(--line);
+    margin-top: 14px;
+  }
+
+  .credit-list dl div {
+    grid-template-columns: minmax(120px, 0.42fr) 1fr;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .gallery-grid figure {
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.62);
+    overflow: hidden;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  @media (max-width: 860px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

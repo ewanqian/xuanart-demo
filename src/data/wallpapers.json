@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "village-nature-field",
+    "title": "Village Nature Field",
+    "titleCn": "村落自然场",
+    "direction": "City to Nature",
+    "preview": "/images/wallpapers/village-nature-field.webp",
+    "download": "/downloads/wallpapers/village-nature-field-4k.jpg"
+  },
+  {
+    "slug": "past-future-museum-city",
+    "title": "Past Future Museum City",
+    "titleCn": "过去未来之城",
+    "direction": "Past to Future",
+    "preview": "/images/wallpapers/past-future-museum-city.webp",
+    "download": "/downloads/wallpapers/past-future-museum-city-4k.jpg"
+  },
+  {
+    "slug": "city-mountain-field",
+    "title": "City Mountain Field",
+    "titleCn": "城市山野场",
+    "direction": "City to Nature",
+    "preview": "/images/wallpapers/city-mountain-field.webp",
+    "download": "/downloads/wallpapers/city-mountain-field-4k.jpg"
+  },
+  {
+    "slug": "urban-glass-island",
+    "title": "Urban Glass Island",
+    "titleCn": "城市玻璃岛",
+    "direction": "Digital to Real",
+    "preview": "/images/wallpapers/urban-glass-island.webp",
+    "download": "/downloads/wallpapers/urban-glass-island-4k.jpg"
+  }
+]

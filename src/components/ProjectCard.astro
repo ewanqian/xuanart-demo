@@ -1,30 +1,50 @@
 ---
 const { project, compact = false } = Astro.props;
+
+const searchText = [
+  project.title,
+  project.titleEn,
+  project.category,
+  project.type,
+  project.role,
+  project.clientOrContext,
+  project.oneLiner,
+  ...(project.keywords ?? []),
+  ...(project.credits ?? []).map((credit) => `${credit.role} ${credit.name}`),
+]
+  .join(" ")
+  .toLowerCase();
 ---
 
-<a class:list={["project-card", { compact }]} href={`/projects/${project.slug}`}>
-  <div class="card-top">
-    <span>{project.category}</span>
-    <span>{project.year}</span>
-  </div>
-  <h3>{project.title}</h3>
-  <p class="en">{project.titleEn}</p>
-  <p>{project.oneLiner}</p>
-  <div class="tag-list">
-    {project.keywords.slice(0, 3).map((tag) => <span class="tag">{tag}</span>)}
+<a class:list={["project-card", { compact }]} href={`/projects/${project.slug}`} data-project-card data-search={searchText}>
+  {project.cover && (
+    <figure class="cover">
+      <img src={project.cover} alt={`${project.title} project cover`} />
+    </figure>
+  )}
+  <div class="card-body">
+    <div class="card-top">
+      <span>{project.category}</span>
+      <span>{project.year}</span>
+    </div>
+    <h3>{project.title}</h3>
+    <p class="en">{project.titleEn}</p>
+    <p>{project.oneLiner}</p>
+    <div class="tag-list">
+      {project.keywords.slice(0, 3).map((tag) => <span class="tag">{tag}</span>)}
+    </div>
   </div>
 </a>
 
 <style>
   .project-card {
     display: flex;
-    min-height: 260px;
+    min-height: 360px;
     flex-direction: column;
-    justify-content: space-between;
     border: 1px solid var(--line);
     border-radius: 8px;
-    padding: 22px;
     background: rgba(255, 255, 255, 0.62);
+    overflow: hidden;
     transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
   }
 
@@ -35,7 +55,27 @@ const { project, compact = false } = Astro.props;
   }
 
   .project-card.compact {
-    min-height: 220px;
+    min-height: 330px;
+  }
+
+  .cover {
+    aspect-ratio: 16 / 9.3;
+    margin: 0;
+    background: rgba(23, 29, 38, 0.08);
+    overflow: hidden;
+  }
+
+  .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 18px;
   }
 
   .card-top {
@@ -48,8 +88,8 @@ const { project, compact = false } = Astro.props;
   }
 
   h3 {
-    margin: 34px 0 8px;
-    font-size: clamp(21px, 2.4vw, 30px);
+    margin: 24px 0 8px;
+    font-size: clamp(19px, 2.1vw, 27px);
     line-height: 1.18;
     font-weight: 560;
   }
@@ -65,5 +105,10 @@ const { project, compact = false } = Astro.props;
     margin-bottom: 18px;
     color: var(--ink);
     font-size: 13px;
+  }
+
+  .tag-list {
+    margin-top: auto;
+    padding-top: 16px;
   }
 </style>

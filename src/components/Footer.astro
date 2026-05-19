@@ -12,7 +12,7 @@ import site from "../data/site.json";
       <p>{site.brand.tagline}</p>
       <p>{site.brand.taglineEn}</p>
       <p>Website: {site.contact.website}</p>
-      <p>Email: {site.contact.email}</p>
+      {site.contact.email !== "待补充" && <p>Email: {site.contact.email}</p>}
     </div>
   </div>
 </footer>

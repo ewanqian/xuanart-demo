@@ -1,0 +1,100 @@
+---
+import Layout from "../components/Layout.astro";
+import wallpapers from "../data/wallpapers.json";
+---
+
+<Layout title="下载 | XUAN Spatial Perception" description="XUAN 轩空间感知广州展会 4K 桌面壁纸下载。">
+  <section class="page-hero">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Downloads</p>
+        <h1>展会 4K 壁纸</h1>
+        <p class="lead">广州展会限定桌面壁纸。四张主视觉，保留城市、山野、未来场与数字空间的方向。</p>
+      </div>
+      <div class="thin-card">
+        <p>Desktop wallpaper / 3840 x 2160 JPG</p>
+        <p>可直接下载，用作电脑桌面或展会资料预览。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container wallpaper-grid">
+      {wallpapers.map((wallpaper) => (
+        <article class="wallpaper-card">
+          <img src={wallpaper.preview} alt={`${wallpaper.titleCn} wallpaper preview`} loading="lazy" />
+          <div class="wallpaper-body">
+            <p class="eyebrow">{wallpaper.direction}</p>
+            <h2>{wallpaper.titleCn}</h2>
+            <p>{wallpaper.title}</p>
+            <a class="button" href={wallpaper.download} download>下载 4K</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 94px 0 58px;
+  }
+
+  h1 {
+    max-width: 780px;
+    margin: 12px 0 20px;
+    font-size: clamp(36px, 6vw, 82px);
+    line-height: 1.06;
+    font-weight: 560;
+  }
+
+  .thin-card p {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .wallpaper-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .wallpaper-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.62);
+    overflow: hidden;
+  }
+
+  .wallpaper-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .wallpaper-body {
+    padding: 18px;
+  }
+
+  .wallpaper-body h2 {
+    margin: 14px 0 8px;
+    font-size: clamp(24px, 3vw, 38px);
+    line-height: 1.12;
+    font-weight: 560;
+  }
+
+  .wallpaper-body p:not(.eyebrow) {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 820px) {
+    .wallpaper-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

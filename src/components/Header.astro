@@ -3,13 +3,14 @@ const nav = [
   ["方法论", "/methodology"],
   ["项目", "/projects"],
   ["展会", "/exhibition"],
+  ["下载", "/downloads"],
   ["联系", "/contact"],
 ];
 ---
 
 <header class="site-header">
   <a class="brand" href="/" aria-label="XUAN Spatial Perception home">
-    <img src="/images/xuan-logo-temp.png" alt="XUAN 轩空间感知" />
+    <img src="/brand/xuan-lockup.png" alt="XUAN 轩空间感知" />
   </a>
   <nav aria-label="Main navigation">
     {nav.map(([label, href]) => <a href={href}>{label}</a>)}
@@ -36,13 +37,12 @@ const nav = [
   .brand {
     display: inline-flex;
     align-items: center;
-    min-width: 178px;
+    min-width: 214px;
   }
 
   .brand img {
-    width: 172px;
+    width: 208px;
     height: auto;
-    mix-blend-mode: multiply;
   }
 
   nav {
@@ -78,7 +78,7 @@ const nav = [
     }
 
     .brand img {
-      width: 146px;
+      width: 170px;
     }
   }
 </style>

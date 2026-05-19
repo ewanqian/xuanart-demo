@@ -34,7 +34,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          PUBLIC_SITE_URL: https://ewanqian.github.io/xuanart-demo
+          PUBLIC_SITE_URL: https://xuanart.com
+          PUBLIC_BASE_PATH: /
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
