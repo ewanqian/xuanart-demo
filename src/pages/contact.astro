@@ -1,0 +1,79 @@
+---
+import Layout from "../components/Layout.astro";
+import site from "../data/site.json";
+---
+
+<Layout title="联系 | XUAN Spatial Perception">
+  <section class="page-hero">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h1>商务合作 / 预约项目沟通</h1>
+        <p class="lead">Business Inquiries / Schedule a Project Conversation</p>
+      </div>
+      <div class="contact-card">
+        {Object.entries(site.contact).map(([key, value]) => (
+          <div>
+            <span>{key}</span>
+            <strong>{value}</strong>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    min-height: calc(100vh - 72px);
+    display: grid;
+    align-items: center;
+    padding: 76px 0;
+  }
+
+  h1 {
+    margin: 12px 0 0;
+    font-size: clamp(30px, 4.5vw, 56px);
+    line-height: 1.22;
+    font-weight: 560;
+  }
+
+  .contact-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.64);
+    overflow: hidden;
+  }
+
+  .contact-card div {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 18px;
+    padding: 18px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .contact-card div:last-child {
+    border-bottom: 0;
+  }
+
+  span {
+    color: var(--blue);
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  strong {
+    font-size: 16px;
+    line-height: 1.45;
+    font-weight: 520;
+    overflow-wrap: anywhere;
+  }
+
+  @media (max-width: 560px) {
+    .contact-card div {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+  }
+</style>

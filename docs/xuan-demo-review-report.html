@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XUAN Website Demo Review Report</title>
+    <style>
+      :root {
+        color: #171d26;
+        background: #fbfaf5;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 40px;
+      }
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 42px;
+        line-height: 1.08;
+      }
+      h2 {
+        margin-top: 42px;
+        color: #315fd6;
+        font-size: 20px;
+      }
+      p,
+      li {
+        color: #67727f;
+        font-size: 16px;
+        line-height: 1.8;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        margin: 14px 0 28px;
+        border: 1px solid rgba(38, 64, 104, 0.13);
+        border-radius: 8px;
+        background: white;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+      @media (max-width: 780px) {
+        body {
+          padding: 20px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>XUAN Website Demo Review Report</h1>
+      <p>2026-05-18 / Local demo: http://localhost:4321/</p>
+
+      <h2>Current State</h2>
+      <p>Astro static website demo with home, projects, project details, methodology, exhibition, and contact pages. The direction references the provided exhibition wall artwork: light background, blue headline accents, pale yellow-blue spatial atmosphere, full temporary XUAN logo, smaller text scale, looser Chinese line-height, and shorter exhibition-facing copy.</p>
+
+      <h2>Reference Order</h2>
+      <ul>
+        <li>展墙图文1.jpg: upper / wide wall layout reference.</li>
+        <li>展墙图文2.jpg: lower / pillar panel layout reference.</li>
+      </ul>
+
+      <h2>Overview Sheet</h2>
+      <img src="demo-report-assets/xuan-demo-overview.png" alt="XUAN website desktop and mobile screenshot overview" />
+
+      <h2>Desktop Screens</h2>
+      <div class="grid">
+        <img src="demo-report-assets/desktop-home.png" alt="Desktop home" />
+        <img src="demo-report-assets/desktop-projects.png" alt="Desktop projects" />
+        <img src="demo-report-assets/desktop-exhibition.png" alt="Desktop exhibition" />
+        <img src="demo-report-assets/desktop-contact.png" alt="Desktop contact" />
+      </div>
+
+      <h2>Mobile Screens</h2>
+      <div class="grid">
+        <img src="demo-report-assets/mobile-home.png" alt="Mobile home" />
+        <img src="demo-report-assets/mobile-projects.png" alt="Mobile projects" />
+        <img src="demo-report-assets/mobile-exhibition.png" alt="Mobile exhibition" />
+        <img src="demo-report-assets/mobile-contact.png" alt="Mobile contact" />
+      </div>
+
+      <h2>Notes</h2>
+      <ul>
+        <li>Logo is temporary and should be replaced with final source artwork.</li>
+        <li>Contact info, QR codes, public project visibility, and media assets still need confirmation.</li>
+        <li>The site builds successfully to dist/ and is ready for Tencent CloudBase Hosting or COS static hosting after console access is confirmed.</li>
+      </ul>
+    </main>
+  </body>
+</html>

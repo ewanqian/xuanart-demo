@@ -1,0 +1,139 @@
+---
+import Layout from "../components/Layout.astro";
+import site from "../data/site.json";
+---
+
+<Layout title="方法论 | XUAN Spatial Perception">
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Methodology</p>
+      <h1>{site.method.headline}</h1>
+      <p class="lead">{site.method.headline} / {site.method.headlineEn}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container process">
+      {site.method.steps.map((step, index) => (
+        <article class="process-step">
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <h2>{step}</h2>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">How We Think</p>
+        <h2 class="section-title">从真实场所出发</h2>
+      </div>
+      <div class="notes">
+        <p>整理地方、历史、品牌、影像、声音和人的移动。</p>
+        <p>将内容转化为空间路径、观看节奏与现场体验。</p>
+        <p>首版网站保留最必要的入口：展会、项目、方法、联系。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Notes on Spatial Perception</p>
+      <div class="direction-grid">
+        {site.directions.map((direction) => (
+          <article class="thin-card">
+            <span>{direction.titleEn}</span>
+            <h2>{direction.title}</h2>
+            <p>{direction.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 94px 0 76px;
+  }
+
+  h1 {
+    max-width: 940px;
+    margin: 12px 0 20px;
+    font-size: clamp(34px, 6vw, 82px);
+    line-height: 1.08;
+    font-weight: 560;
+  }
+
+  .process {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.48);
+  }
+
+  .process-step {
+    min-height: 280px;
+    padding: 22px;
+    border-right: 1px solid var(--line);
+  }
+
+  .process-step:last-child {
+    border-right: 0;
+  }
+
+  .process-step span,
+  .thin-card span {
+    color: var(--blue);
+    font-size: 12px;
+  }
+
+  .process-step h2 {
+    margin: 92px 0 0;
+    font-size: clamp(21px, 2.5vw, 30px);
+    line-height: 1.18;
+    font-weight: 560;
+  }
+
+  .notes p,
+  .thin-card p {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.9;
+  }
+
+  .direction-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 32px;
+  }
+
+  .thin-card h2 {
+    margin: 36px 0 18px;
+    font-size: 28px;
+    line-height: 1.18;
+    font-weight: 560;
+  }
+
+  @media (max-width: 960px) {
+    .process,
+    .direction-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-step {
+      min-height: 190px;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .process-step h2 {
+      margin-top: 56px;
+    }
+  }
+</style>

@@ -1,0 +1,48 @@
+---
+import site from "../data/site.json";
+---
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="eyebrow">XUAN Spatial Perception</p>
+      <h2>让空间重新被感受到</h2>
+    </div>
+    <div class="meta">
+      <p>{site.brand.tagline}</p>
+      <p>{site.brand.taglineEn}</p>
+      <p>Website: {site.contact.website}</p>
+      <p>Email: {site.contact.email}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--line);
+    padding: 48px 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr minmax(240px, 0.5fr);
+    gap: 32px;
+  }
+
+  h2 {
+    margin: 10px 0 0;
+    font-size: clamp(30px, 5vw, 62px);
+    line-height: 1.05;
+    font-weight: 560;
+  }
+
+  p {
+    margin: 0 0 8px;
+  }
+
+  @media (max-width: 700px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

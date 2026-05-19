@@ -1,0 +1,84 @@
+---
+const nav = [
+  ["方法论", "/methodology"],
+  ["项目", "/projects"],
+  ["展会", "/exhibition"],
+  ["联系", "/contact"],
+];
+---
+
+<header class="site-header">
+  <a class="brand" href="/" aria-label="XUAN Spatial Perception home">
+    <img src="/images/xuan-logo-temp.png" alt="XUAN 轩空间感知" />
+  </a>
+  <nav aria-label="Main navigation">
+    {nav.map(([label, href]) => <a href={href}>{label}</a>)}
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: min(calc(100% - 32px), var(--max));
+    margin: 0 auto;
+    padding: 16px 0;
+    background: rgba(247, 247, 242, 0.82);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    min-width: 178px;
+  }
+
+  .brand img {
+    width: 172px;
+    height: auto;
+    mix-blend-mode: multiply;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+  }
+
+  nav a {
+    border-radius: 999px;
+    padding: 9px 12px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  nav a:hover {
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--ink);
+  }
+
+  @media (max-width: 640px) {
+    .site-header {
+      width: min(calc(100% - 24px), var(--max));
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    nav {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .brand img {
+      width: 146px;
+    }
+  }
+</style>

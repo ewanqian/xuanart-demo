@@ -1,0 +1,187 @@
+---
+import Layout from "../components/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import site from "../data/site.json";
+import projects from "../data/projects.json";
+
+const featured = projects.filter((project) => project.featured).slice(0, 4);
+---
+
+<Layout title="广州展会入口 | XUAN Spatial Perception">
+  <section class="expo-hero">
+    <div class="container expo-grid">
+      <div>
+        <p class="eyebrow">{site.exhibition.name}</p>
+        <h1>{site.exhibition.wallText}</h1>
+        <p class="lead">{site.exhibition.wallTextEn}</p>
+      </div>
+      <div class="qr-panel">
+        <span>QR PLACEHOLDER</span>
+        <p>现场扫码入口 / Portfolio / Contact</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Wall Text</p>
+        <h2 class="section-title">空间为画布，光影即颜料</h2>
+        <p class="lead">Space as Canvas, Light and Shadow as Material.</p>
+      </div>
+      <div class="wall-copy">
+        <p>XUAN / 轩空间感知从真实场所出发，整理地方文化、历史材料、品牌内容与数字媒介。</p>
+        <p>文旅空间、博物展陈、展览空间、品牌环境、实时预演与空间计算，共同构成这次展会的内容入口。</p>
+        <p>从城市到山野，从过去到未来，从数字到现实。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Recommended Route</p>
+      <ol class="route-list">
+        {site.exhibition.route.map((item) => <li>{item}</li>)}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Fast Portfolio Entry</p>
+      <div class="project-grid">
+        {featured.map((project) => <ProjectCard project={project} compact />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section reference-section">
+    <div class="container">
+      <p class="eyebrow">Wall Layout Reference</p>
+      <h2 class="section-title">展墙排版参考</h2>
+      <div class="reference-grid">
+        <figure>
+          <img src="/images/wall-reference-1.jpg" alt="展墙图文排版稿上半部分" loading="lazy" />
+          <figcaption>展墙图文1 / 上半部分</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/wall-reference-2.jpg" alt="展墙图文排版稿下半部分" loading="lazy" />
+          <figcaption>展墙图文2 / 下半部分</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .expo-hero {
+    min-height: calc(100vh - 72px);
+    display: grid;
+    align-items: center;
+    padding: 58px 0 76px;
+  }
+
+  .expo-grid {
+    display: grid;
+    grid-template-columns: 1fr minmax(240px, 0.38fr);
+    gap: 36px;
+    align-items: end;
+  }
+
+  h1 {
+    margin: 12px 0 20px;
+    max-width: 780px;
+    font-size: clamp(40px, 8vw, 108px);
+    line-height: 1.04;
+    font-weight: 560;
+  }
+
+  .qr-panel {
+    aspect-ratio: 1;
+    display: grid;
+    align-content: space-between;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px;
+    background:
+      linear-gradient(90deg, rgba(23, 33, 43, 0.08) 1px, transparent 1px) 0 0 / 18px 18px,
+      linear-gradient(0deg, rgba(23, 33, 43, 0.08) 1px, transparent 1px) 0 0 / 18px 18px,
+      rgba(255, 255, 255, 0.72);
+  }
+
+  .qr-panel span {
+    color: var(--blue);
+    font-size: 12px;
+  }
+
+  .qr-panel p,
+  .wall-copy p {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .route-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .route-list li {
+    min-height: 160px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.62);
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .reference-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  figure {
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.72);
+  }
+
+  figure img {
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    padding: 12px 14px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  @media (max-width: 900px) {
+    .expo-grid,
+    .route-list,
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

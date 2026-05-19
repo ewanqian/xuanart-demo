@@ -1,0 +1,69 @@
+---
+import Layout from "../components/Layout.astro";
+import site from "../data/site.json";
+---
+
+<Layout
+  title={`页面未找到 | ${site.brand.name}`}
+  description="XUAN 轩空间感知页面未找到。"
+>
+  <section class="not-found">
+    <div class="container not-found-grid">
+      <div>
+        <p class="eyebrow">404 / Page Not Found</p>
+        <h1>页面未找到</h1>
+        <p class="lead">入口可能已调整。可以回到首页、项目页或展会现场页面继续查看。</p>
+        <div class="button-row">
+          <a class="button" href="/">回到首页</a>
+          <a class="button secondary" href="/exhibition">展会入口</a>
+          <a class="button secondary" href="/projects">项目列表</a>
+        </div>
+      </div>
+      <figure>
+        <img src="/images/xuan-logo-temp.png" alt="XUAN 轩空间感知" />
+      </figure>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .not-found {
+    min-height: calc(100vh - 72px);
+    display: grid;
+    align-items: center;
+    padding: 72px 0;
+  }
+
+  .not-found-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.7fr);
+    gap: 44px;
+    align-items: center;
+  }
+
+  h1 {
+    margin: 12px 0 18px;
+    font-size: clamp(44px, 7vw, 86px);
+    line-height: 1;
+    font-weight: 560;
+  }
+
+  figure {
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  img {
+    width: 100%;
+    mix-blend-mode: multiply;
+  }
+
+  @media (max-width: 760px) {
+    .not-found-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,25 @@
+{
+  "name": "xuan-spatial-perception",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "preview": "astro preview --host 0.0.0.0",
+    "cloud:inventory": "node scripts/tencent-cloud-inventory.mjs",
+    "cloud:deploy:cloudbase": "node scripts/deploy-cloudbase.mjs",
+    "cloud:deploy:cos": "node scripts/deploy-cos.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
+    "@cloudbase/cli": "^3.4.0",
+    "astro": "^6.3.3",
+    "cos-nodejs-sdk-v5": "^2.15.4",
+    "gray-matter": "^4.0.3",
+    "remark-parse": "^11.0.0",
+    "retext-stringify": "^4.0.0",
+    "sharp": "^0.34.5",
+    "zod": "^4.2.0"
+  }
+}

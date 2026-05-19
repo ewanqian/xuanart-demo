@@ -1,0 +1,35 @@
+---
+import Layout from "../components/Layout.astro";
+import site from "../data/site.json";
+---
+
+<Layout title="关于 | XUAN Spatial Perception">
+  <section class="page-hero">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">About</p>
+        <h1>{site.brand.name} / {site.brand.nameEn}</h1>
+      </div>
+      <div>
+        <p class="lead">{site.brand.intro}</p>
+        <p class="meta">{site.brand.introEn}</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    min-height: calc(100vh - 72px);
+    display: grid;
+    align-items: center;
+    padding: 76px 0;
+  }
+
+  h1 {
+    margin: 12px 0 0;
+    font-size: clamp(36px, 6vw, 84px);
+    line-height: 1.06;
+    font-weight: 560;
+  }
+</style>

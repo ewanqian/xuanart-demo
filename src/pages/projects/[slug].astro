@@ -1,0 +1,102 @@
+---
+import Layout from "../../components/Layout.astro";
+import projects from "../../data/projects.json";
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout title={`${project.title} | XUAN Spatial Perception`}>
+  <article>
+    <section class="project-hero">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">{project.category}</p>
+          <h1>{project.title}</h1>
+          <p class="lead">{project.titleEn}</p>
+        </div>
+        <aside class="thin-card">
+          <dl>
+            <div><dt>Year</dt><dd>{project.year}</dd></div>
+            <div><dt>Type</dt><dd>{project.type}</dd></div>
+            <div><dt>Role</dt><dd>{project.role}</dd></div>
+            <div><dt>Context</dt><dd>{project.clientOrContext}</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">Summary</p>
+          <h2 class="section-title">{project.oneLiner}</h2>
+        </div>
+        <div>
+          <p class="body">{project.description}</p>
+          <div class="tag-list">
+            {project.keywords.map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+          <div class="button-row">
+            <a class="button secondary" href="/projects">返回项目</a>
+            <a class="button" href="/contact">预约沟通</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .project-hero {
+    padding: 94px 0 76px;
+  }
+
+  h1 {
+    margin: 12px 0 20px;
+    font-size: clamp(36px, 6vw, 84px);
+    line-height: 1.06;
+    font-weight: 560;
+  }
+
+  dl {
+    margin: 0;
+  }
+
+  dl div {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  dl div:last-child {
+    border-bottom: 0;
+  }
+
+  dt {
+    color: var(--blue);
+    font-size: 12px;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .body {
+    margin: 0;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.9;
+  }
+</style>

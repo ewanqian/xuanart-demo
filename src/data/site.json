@@ -1,0 +1,58 @@
+{
+  "brand": {
+    "name": "轩空间感知",
+    "nameEn": "XUAN Spatial Perception",
+    "tagline": "空间为画布，光影即颜料",
+    "taglineEn": "Space as Canvas, Light and Shadow as Material.",
+    "positioning": "新媒体空间设计 / 文旅展陈 / 品牌环境 / 空间影像",
+    "positioningEn": "New Media Spatial Design / Cultural Spaces / Brand Environments / Spatial Media",
+    "intro": "XUAN / 轩空间感知从真实场所出发，整理地方文化、历史材料、品牌内容与数字媒介，形成可观看、可行走、可进入的空间体验。",
+    "introEn": "XUAN / Spatial Perception begins with real sites, organizing local culture, historical material, brand content, and digital media into experiences that can be seen, walked through, and entered."
+  },
+  "directions": [
+    {
+      "title": "从城市到山野",
+      "titleEn": "From City to Landscape",
+      "body": "面向城市更新、乡野文旅、山水现场与公共空间，整理地方关系、自然材料与观看路径，形成可停留、可传播的现场体验。",
+      "keywords": ["文旅与地方空间", "在地叙事", "自然教育", "城市更新", "公共空间体验"]
+    },
+    {
+      "title": "从过去到未来",
+      "titleEn": "From Heritage to Future",
+      "body": "将档案、材料、城市记忆与未来想象转化为空间路径。观众在行走中理解时间，在观看中进入历史与未来。",
+      "keywords": ["博物馆展陈", "城市文化", "历史材料显影", "城市记忆转译", "未来场景预演"]
+    },
+    {
+      "title": "从数字到现实",
+      "titleEn": "From Digital to Physical Space",
+      "body": "通过实时影像、XR、Vision Pro 与空间计算，显示结构、过程、记忆、数据、未来状态与人的行为路径。",
+      "keywords": ["空间影像系统", "实时预演", "XR 体验", "空间计算", "虚实信息叠加"]
+    }
+  ],
+  "method": {
+    "headline": "场所 / 内容 / 视觉 / 路径 / 体验",
+    "headlineEn": "Site / Content / Image / Route / Experience",
+    "steps": [
+      "真实场所",
+      "地方文化 / 历史材料 / 品牌内容",
+      "空间影像 / 声音 / 交互 / 动线",
+      "可观看、可行走、可进入的体验",
+      "可传播、可复用、可持续更新的空间内容系统"
+    ]
+  },
+  "exhibition": {
+    "name": "XUAN Guangzhou Edition 2026",
+    "summary": "广州展会现场扫码入口。保留展墙核心文案、项目入口与联系方式，移动端优先。",
+    "route": ["轩空间感知", "图域项目线", "Virtura 内容线", "商务合作"],
+    "wallText": "让空间重新被感受到",
+    "wallTextEn": "Let Space Be Felt Again."
+  },
+  "contact": {
+    "website": "xuan-spatial.example.com",
+    "wechat": "待补充",
+    "red": "待补充",
+    "email": "hello@xuan-spatial.example.com",
+    "phone": "待补充",
+    "address": "Shanghai / Guangzhou / Remote"
+  }
+}
