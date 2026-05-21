@@ -6,21 +6,50 @@ import projects from "../data/projects.json";
 import wallpapers from "../data/wallpapers.json";
 
 const featured = projects.filter((project) => project.featured).slice(0, 6);
+const heroSlides = [
+  {
+    src: "/images/wallpapers/village-nature-field.webp",
+    alt: "XUAN Guangzhou visual direction: village and nature field",
+  },
+  {
+    src: "/images/wallpapers/past-future-museum-city.webp",
+    alt: "XUAN Guangzhou visual direction: past future museum city",
+  },
+  {
+    src: "/images/wallpapers/urban-glass-island.webp",
+    alt: "XUAN Guangzhou visual direction: urban glass island",
+  },
+];
 ---
 
 <Layout>
-  <section class="hero">
-    <div class="container">
+  <section class="hero hero-kv" aria-label="XUAN Spatial Perception brand key visual">
+    <div class="hero-slides" aria-hidden="true">
+      {heroSlides.map((slide, index) => (
+        <figure class="hero-slide" style={`--i:${index}`}>
+          <img src={slide.src} alt={slide.alt} loading={index === 0 ? "eager" : "lazy"} />
+        </figure>
+      ))}
+    </div>
+    <div class="container hero-inner">
       <div class="hero-copy">
         <p class="eyebrow">XUAN Guangzhou Edition 2026</p>
-        <h1>{site.brand.nameEn}</h1>
+        <h1>
+          <span>{site.brand.nameEn}</span>
+          <span>{site.brand.name}</span>
+        </h1>
         <p class="tagline">{site.brand.tagline}</p>
+        <p class="tagline-en">{site.brand.taglineEn}</p>
         <p class="lead">{site.brand.positioning}</p>
         <div class="button-row">
-          <a class="button" href="/projects">查看作品集</a>
-          <a class="button secondary" href="/exhibition">展会入口</a>
+          <a class="button" href="/projects">Works / 代表项目</a>
+          <a class="button secondary" href="/about">About / 关于我们</a>
         </div>
       </div>
+      <a class="expo-link" href="/exhibition">
+        <span>Guangzhou Exhibition</span>
+        <strong>现场扫码入口</strong>
+      </a>
     </div>
   </section>
 
@@ -74,9 +103,9 @@ const featured = projects.filter((project) => project.featured).slice(0, 6);
       <div class="section-head">
         <div>
           <p class="eyebrow">Selected Projects</p>
-          <h2 class="section-title">代表项目与内容线</h2>
+          <h2 class="section-title">Works / 代表项目</h2>
         </div>
-        <a class="button secondary" href="/projects">全部项目</a>
+        <a class="button secondary" href="/projects">查看全部</a>
       </div>
       <div class="project-grid">
         {featured.map((project) => <ProjectCard project={project} />)}
@@ -124,25 +153,114 @@ const featured = projects.filter((project) => project.featured).slice(0, 6);
 
 <style>
   .hero {
+    position: relative;
+    min-height: 82vh;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-kv {
     display: grid;
     align-items: end;
-    min-height: 72vh;
-    padding: 116px 0 88px;
+    padding: 112px 0 72px;
+    background:
+      linear-gradient(90deg, rgba(251, 250, 245, 0.98) 0%, rgba(251, 250, 245, 0.88) 38%, rgba(251, 250, 245, 0.62) 100%),
+      var(--paper);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(220px, 0.28fr);
+    gap: 36px;
+    align-items: end;
+  }
+
+  .hero-slides {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    animation: heroFade 18s infinite;
+    animation-delay: calc(var(--i) * 6s);
+  }
+
+  .hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(0.88) contrast(0.96);
+  }
+
+  @keyframes heroFade {
+    0%,
+    100% {
+      opacity: 0;
+    }
+
+    8%,
+    32% {
+      opacity: 0.58;
+    }
   }
 
   h1 {
-    margin: 10px 0 18px;
+    display: grid;
+    gap: 14px;
+    margin: 10px 0 24px;
     max-width: 820px;
     font-size: clamp(42px, 5.4vw, 76px);
     line-height: 1.02;
     font-weight: 560;
   }
 
+  h1 span:last-child {
+    color: var(--blue);
+    font-size: clamp(24px, 3vw, 42px);
+    line-height: 1.18;
+  }
+
   .tagline {
-    margin: 0 0 22px;
+    margin: 0 0 8px;
     color: var(--blue);
     font-size: clamp(20px, 2.5vw, 32px);
     line-height: 1.28;
+  }
+
+  .tagline-en {
+    margin: 0 0 22px;
+    color: var(--ink);
+    font-size: clamp(18px, 2.1vw, 28px);
+    line-height: 1.32;
+  }
+
+  .expo-link {
+    display: grid;
+    gap: 8px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.64);
+    backdrop-filter: blur(14px);
+  }
+
+  .expo-link span {
+    color: var(--blue);
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .expo-link strong {
+    font-size: 20px;
+    line-height: 1.35;
+    font-weight: 560;
   }
 
   .direction-grid,
@@ -252,7 +370,18 @@ const featured = projects.filter((project) => project.featured).slice(0, 6);
 
     .hero {
       min-height: auto;
-      padding: 48px 0 64px;
+      padding: 58px 0 64px;
+    }
+
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .hero-kv {
+      background:
+        linear-gradient(180deg, rgba(251, 250, 245, 0.95) 0%, rgba(251, 250, 245, 0.82) 100%),
+        var(--paper);
     }
 
     h1 {

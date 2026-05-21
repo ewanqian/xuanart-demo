@@ -1,0 +1,85 @@
+---
+const { members = [] } = Astro.props;
+---
+
+<div class="team-grid">
+  {members.map((member) => (
+    <article class="member-card">
+      {member.avatar ? (
+        <img src={member.avatar} alt={`${member.name} portrait`} loading="lazy" />
+      ) : (
+        <div class="avatar-placeholder" aria-hidden="true">{member.name === "TBD" ? "X" : member.name.slice(0, 1)}</div>
+      )}
+      <div>
+        <h3>{member.name}</h3>
+        <p class="role">{member.role}</p>
+        <p>{member.bio}</p>
+      </div>
+    </article>
+  ))}
+</div>
+
+<style>
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .member-card {
+    display: grid;
+    gap: 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.58);
+  }
+
+  img,
+  .avatar-placeholder {
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    object-fit: cover;
+    background:
+      linear-gradient(135deg, rgba(49, 95, 214, 0.12), rgba(255, 240, 105, 0.16)),
+      rgba(255, 255, 255, 0.72);
+  }
+
+  .avatar-placeholder {
+    display: grid;
+    place-items: center;
+    color: var(--blue);
+    font-size: 44px;
+    font-weight: 560;
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 560;
+  }
+
+  p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.78;
+  }
+
+  .role {
+    margin-bottom: 12px;
+    color: var(--blue);
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 860px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

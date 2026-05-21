@@ -1,0 +1,38 @@
+[
+  {
+    "title": "村落自然场",
+    "titleEn": "Village Nature Field",
+    "kind": "4K wallpaper",
+    "size": "3840 x 2160",
+    "license": "public exhibition gift",
+    "preview": "/images/wallpapers/village-nature-field.webp",
+    "download": "/downloads/wallpapers/village-nature-field-4k.jpg"
+  },
+  {
+    "title": "过去未来之城",
+    "titleEn": "Past Future Museum City",
+    "kind": "4K wallpaper",
+    "size": "3840 x 2160",
+    "license": "public exhibition gift",
+    "preview": "/images/wallpapers/past-future-museum-city.webp",
+    "download": "/downloads/wallpapers/past-future-museum-city-4k.jpg"
+  },
+  {
+    "title": "城市山野场",
+    "titleEn": "City Mountain Field",
+    "kind": "4K wallpaper",
+    "size": "3840 x 2160",
+    "license": "public exhibition gift",
+    "preview": "/images/wallpapers/city-mountain-field.webp",
+    "download": "/downloads/wallpapers/city-mountain-field-4k.jpg"
+  },
+  {
+    "title": "城市玻璃岛",
+    "titleEn": "Urban Glass Island",
+    "kind": "4K wallpaper",
+    "size": "3840 x 2160",
+    "license": "public exhibition gift",
+    "preview": "/images/wallpapers/urban-glass-island.webp",
+    "download": "/downloads/wallpapers/urban-glass-island-4k.jpg"
+  }
+]

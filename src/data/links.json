@@ -1,0 +1,58 @@
+[
+  {
+    "id": "website",
+    "label": "官网 / Website",
+    "value": "xuanart.com",
+    "href": "http://xuanart.com/",
+    "type": "link",
+    "qr": null
+  },
+  {
+    "id": "wechat",
+    "label": "微信公众号 / WeChat Official Account",
+    "value": "TBD",
+    "href": "",
+    "type": "qr",
+    "qr": null
+  },
+  {
+    "id": "xiaohongshu",
+    "label": "小红书 / RED",
+    "value": "TBD",
+    "href": "",
+    "type": "link",
+    "qr": null
+  },
+  {
+    "id": "douyin",
+    "label": "抖音 / Douyin",
+    "value": "TBD",
+    "href": "",
+    "type": "link",
+    "qr": null
+  },
+  {
+    "id": "email",
+    "label": "邮箱 / Email",
+    "value": "TBD",
+    "href": "",
+    "type": "email",
+    "qr": null
+  },
+  {
+    "id": "phone",
+    "label": "电话 / Phone",
+    "value": "TBD",
+    "href": "",
+    "type": "phone",
+    "qr": null
+  },
+  {
+    "id": "address",
+    "label": "地址 / Address",
+    "value": "Shanghai / Guangzhou / Remote",
+    "href": "",
+    "type": "text",
+    "qr": null
+  }
+]

@@ -10,16 +10,32 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "面向城市地标未来想象的空间内容系统。",
     "description": "围绕上海城市记忆、未来图景与高空观看体验，将东方明珠顶层空间转化为可进入、可传播的城市叙事。",
-    "keywords": ["城市地标", "未来场景", "空间影像"],
+    "keywords": [
+      "城市地标",
+      "未来场景",
+      "空间影像"
+    ],
     "cover": "/images/projects/covers/oriental-pearl-metaspace-2073.webp",
     "gallery": [
       "/images/projects/gallery/oriental-pearl-metaspace-2073-01.webp",
       "/images/projects/gallery/oriental-pearl-metaspace-2073-02.webp",
       "/images/projects/gallery/oriental-pearl-metaspace-2073-03.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": true
+    "featured": true,
+    "title_en": "Oriental Pearl Metaspace 2073",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Cultural & Local Spaces"
   },
   {
     "slug": "dunhuang-starry-sky-planetarium",
@@ -32,15 +48,31 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "让敦煌材料与星空想象在博物馆路径中相遇。",
     "description": "将历史图像、宇宙想象与展陈空间结合，形成兼具文化材料与未来感知的主题展示。",
-    "keywords": ["博物馆", "敦煌", "星空"],
+    "keywords": [
+      "博物馆",
+      "敦煌",
+      "星空"
+    ],
     "cover": "/images/projects/covers/dunhuang-starry-sky-planetarium.webp",
     "gallery": [
       "/images/projects/gallery/dunhuang-starry-sky-planetarium-01.webp",
       "/images/projects/gallery/dunhuang-starry-sky-planetarium-02.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": true
+    "featured": true,
+    "title_en": "Dunhuang Starry Sky / Shanghai Planetarium",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Museum & Heritage Futures"
   },
   {
     "slug": "chengdu-twin-towers-light-show",
@@ -53,16 +85,32 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "以城市天际线为媒介，组织可远观的公共光影事件。",
     "description": "面向高层建筑立面与城市夜景，将影像节奏、建筑尺度和公共传播整合为城市级灯光内容。",
-    "keywords": ["城市夜景", "建筑立面", "灯光秀"],
+    "keywords": [
+      "城市夜景",
+      "建筑立面",
+      "灯光秀"
+    ],
     "cover": "/images/projects/covers/chengdu-twin-towers-light-show.webp",
     "gallery": [
       "/images/projects/gallery/chengdu-twin-towers-light-show-01.webp",
       "/images/projects/gallery/chengdu-twin-towers-light-show-02.webp",
       "/images/projects/gallery/chengdu-twin-towers-light-show-03.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "Chengdu Twin Towers Light Show",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Cultural & Local Spaces"
   },
   {
     "slug": "poly-tianfeng-showroom",
@@ -75,16 +123,32 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "以光影包裹展厅动线，建立沉浸式品牌场景。",
     "description": "将空间模型、光影叙事与观看动线整合，让展厅从展示容器转为可被进入的体验场。",
-    "keywords": ["展厅", "沉浸空间", "品牌场景"],
+    "keywords": [
+      "展厅",
+      "沉浸空间",
+      "品牌场景"
+    ],
     "cover": "/images/projects/covers/poly-tianfeng-showroom.webp",
     "gallery": [
       "/images/projects/gallery/poly-tianfeng-showroom-01.webp",
       "/images/projects/gallery/poly-tianfeng-showroom-02.webp",
       "/images/projects/gallery/poly-tianfeng-showroom-03.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "Poly Tianfeng Showroom",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Museum & Heritage Futures"
   },
   {
     "slug": "china-national-geographic-magzone",
@@ -97,16 +161,32 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "以地理、自然与探索叙事组织可进入的主题空间。",
     "description": "以中国国家地理的内容资产为基础，将自然教育、视觉系统与空间动线组织成可观看、可停留、可传播的线下体验。",
-    "keywords": ["自然教育", "主题空间", "内容叙事"],
+    "keywords": [
+      "自然教育",
+      "主题空间",
+      "内容叙事"
+    ],
     "cover": "/images/projects/covers/china-national-geographic-magzone.webp",
     "gallery": [
       "/images/projects/gallery/china-national-geographic-magzone-01.webp",
       "/images/projects/gallery/china-national-geographic-magzone-02.webp",
       "/images/projects/gallery/china-national-geographic-magzone-03.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": true
+    "featured": true,
+    "title_en": "China National Geographic Magzone",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Museum & Heritage Futures"
   },
   {
     "slug": "mount-taishan-immersive-light-space",
@@ -119,16 +199,32 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "将山岳文化与夜游体验转译为沉浸式光影路径。",
     "description": "以泰山在地文化、自然环境与游览路线为材料，构建面向公众的夜间空间体验。",
-    "keywords": ["文旅", "夜游", "在地叙事"],
+    "keywords": [
+      "文旅",
+      "夜游",
+      "在地叙事"
+    ],
     "cover": "/images/projects/covers/mount-taishan-immersive-light-space.webp",
     "gallery": [
       "/images/projects/gallery/mount-taishan-immersive-light-space-01.webp",
       "/images/projects/gallery/mount-taishan-immersive-light-space-02.webp",
       "/images/projects/gallery/mount-taishan-immersive-light-space-03.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": true
+    "featured": true,
+    "title_en": "Mount Taishan Immersive Light Space",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Cultural & Local Spaces"
   },
   {
     "slug": "bmw-ifactory-metaverse",
@@ -141,16 +237,32 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "以实时预演方式组织工厂空间、流程与未来状态。",
     "description": "面向企业场景，将数字工厂、空间查看器和实时预演整合为可沟通的空间系统。",
-    "keywords": ["数字孪生", "实时预演", "企业空间"],
+    "keywords": [
+      "数字孪生",
+      "实时预演",
+      "企业空间"
+    ],
     "cover": "/images/projects/covers/bmw-ifactory-metaverse.webp",
     "gallery": [
       "/images/projects/gallery/bmw-ifactory-metaverse-01.webp",
       "/images/projects/gallery/bmw-ifactory-metaverse-02.webp",
       "/images/projects/gallery/bmw-ifactory-metaverse-03.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "BMW iFactory Metaverse Platform",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Brand & Commercial Environments"
   },
   {
     "slug": "alibaba-data-experience-center",
@@ -163,16 +275,32 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "把数据结构转化为可被观看的多媒体剧场体验。",
     "description": "以企业数据、空间屏幕与观看节奏为核心，将抽象信息组织成具有现场感的传播场景。",
-    "keywords": ["数据可视化", "企业展厅", "媒体剧场"],
+    "keywords": [
+      "数据可视化",
+      "企业展厅",
+      "媒体剧场"
+    ],
     "cover": "/images/projects/covers/alibaba-data-experience-center.webp",
     "gallery": [
       "/images/projects/gallery/alibaba-data-experience-center-01.webp",
       "/images/projects/gallery/alibaba-data-experience-center-02.webp",
       "/images/projects/gallery/alibaba-data-experience-center-03.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "Alibaba Data Experience Center",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Brand & Commercial Environments"
   },
   {
     "slug": "beijing-expo-botanical-immersive-space",
@@ -185,16 +313,32 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "以植物、影像与互动组织自然教育空间。",
     "description": "将植物主题、游览动线与沉浸式影像结合，形成面向家庭与公众的自然感知体验。",
-    "keywords": ["植物馆", "自然教育", "互动影像"],
+    "keywords": [
+      "植物馆",
+      "自然教育",
+      "互动影像"
+    ],
     "cover": "/images/projects/covers/beijing-expo-botanical-immersive-space.webp",
     "gallery": [
       "/images/projects/gallery/beijing-expo-botanical-immersive-space-01.webp",
       "/images/projects/gallery/beijing-expo-botanical-immersive-space-02.webp",
       "/images/projects/gallery/beijing-expo-botanical-immersive-space-03.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "Beijing Expo Botanical Immersive Space",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Cultural & Local Spaces"
   },
   {
     "slug": "bvlgari-hotel-dome-projection",
@@ -207,15 +351,31 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "以穹顶投影构建品牌晚宴的空间光场。",
     "description": "围绕酒店穹顶结构与高端品牌活动气质，组织影像、光线与现场仪式感。",
-    "keywords": ["穹顶投影", "品牌活动", "光影秀"],
+    "keywords": [
+      "穹顶投影",
+      "品牌活动",
+      "光影秀"
+    ],
     "cover": "/images/projects/covers/bvlgari-hotel-dome-projection.webp",
     "gallery": [
       "/images/projects/gallery/bvlgari-hotel-dome-projection-01.webp",
       "/images/projects/gallery/bvlgari-hotel-dome-projection-02.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "Bulgari Hotel Dome Projection",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Brand & Commercial Environments"
   },
   {
     "slug": "wufangzhai-flagship-store-light-facade",
@@ -228,16 +388,32 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "将老字号品牌转译为可变化的空间光影界面。",
     "description": "以旗舰店立面和室内场景为媒介，将节令、品牌记忆与互动灯光整合成商业空间体验。",
-    "keywords": ["旗舰店", "灯光幕墙", "老字号"],
+    "keywords": [
+      "旗舰店",
+      "灯光幕墙",
+      "老字号"
+    ],
     "cover": "/images/projects/covers/wufangzhai-flagship-store-light-facade.webp",
     "gallery": [
       "/images/projects/gallery/wufangzhai-flagship-store-light-facade-01.webp",
       "/images/projects/gallery/wufangzhai-flagship-store-light-facade-02.webp",
       "/images/projects/gallery/wufangzhai-flagship-store-light-facade-03.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "Wufangzhai Flagship Store Light Facade",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Brand & Commercial Environments"
   },
   {
     "slug": "zhenru-phantasmagoria",
@@ -250,16 +426,32 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "以色彩、尺度与动态影像建立幻境式观看场。",
     "description": "通过沉浸式屏幕、空间色彩和流动图像，形成强感官的数字艺术展览体验。",
-    "keywords": ["数字艺术", "沉浸展", "感官空间"],
+    "keywords": [
+      "数字艺术",
+      "沉浸展",
+      "感官空间"
+    ],
     "cover": "/images/projects/covers/zhenru-phantasmagoria.webp",
     "gallery": [
       "/images/projects/gallery/zhenru-phantasmagoria-01.webp",
       "/images/projects/gallery/zhenru-phantasmagoria-02.webp",
       "/images/projects/gallery/zhenru-phantasmagoria-03.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "Zhenru Phantasmagoria",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Cultural & Local Spaces"
   },
   {
     "slug": "shiseido-night-of-crowns",
@@ -272,16 +464,32 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "将餐桌、器物与品牌仪式组织为可感知的光影叙事。",
     "description": "以晚宴现场为核心，把投影、桌面、器物和品牌记忆整合为细腻的现场体验。",
-    "keywords": ["品牌晚宴", "桌面投影", "仪式感"],
+    "keywords": [
+      "品牌晚宴",
+      "桌面投影",
+      "仪式感"
+    ],
     "cover": "/images/projects/covers/shiseido-night-of-crowns.webp",
     "gallery": [
       "/images/projects/gallery/shiseido-night-of-crowns-01.webp",
       "/images/projects/gallery/shiseido-night-of-crowns-02.webp",
       "/images/projects/gallery/shiseido-night-of-crowns-03.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "Shiseido Night of Crowns",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Brand & Commercial Environments"
   },
   {
     "slug": "marriott-luxury-collection-projection",
@@ -294,16 +502,32 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "以光影组织发布会现场的空间氛围。",
     "description": "围绕酒店发布会场景，将桌面、屏幕与空间光线编排为完整的品牌体验。",
-    "keywords": ["发布会", "酒店品牌", "现场投影"],
+    "keywords": [
+      "发布会",
+      "酒店品牌",
+      "现场投影"
+    ],
     "cover": "/images/projects/covers/marriott-luxury-collection-projection.webp",
     "gallery": [
       "/images/projects/gallery/marriott-luxury-collection-projection-01.webp",
       "/images/projects/gallery/marriott-luxury-collection-projection-02.webp",
       "/images/projects/gallery/marriott-luxury-collection-projection-03.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "Marriott Luxury Collection Projection",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Brand & Commercial Environments"
   },
   {
     "slug": "jiaxing-grand-canal-digital-experience-center",
@@ -316,16 +540,32 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "以大运河为线索组织城市文化数字体验。",
     "description": "将运河文化、空间动线与数字影像整合，形成可参观、可停留、可学习的城市文化入口。",
-    "keywords": ["大运河", "城市文化", "数字体验"],
+    "keywords": [
+      "大运河",
+      "城市文化",
+      "数字体验"
+    ],
     "cover": "/images/projects/covers/jiaxing-grand-canal-digital-experience-center.webp",
     "gallery": [
       "/images/projects/gallery/jiaxing-grand-canal-digital-experience-center-01.webp",
       "/images/projects/gallery/jiaxing-grand-canal-digital-experience-center-02.webp",
       "/images/projects/gallery/jiaxing-grand-canal-digital-experience-center-03.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "Jiaxing Grand Canal Digital Experience Center",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Cultural & Local Spaces"
   },
   {
     "slug": "dinessr-bund-flagship-store",
@@ -338,16 +578,32 @@
     "clientOrContext": "图域项目线",
     "oneLiner": "以花、光与空间装置组织美妆旗舰店体验。",
     "description": "将品牌视觉、商业动线与数字装置结合，形成适合拍摄、停留和传播的线下场景。",
-    "keywords": ["旗舰店", "美妆品牌", "空间装置"],
+    "keywords": [
+      "旗舰店",
+      "美妆品牌",
+      "空间装置"
+    ],
     "cover": "/images/projects/covers/dinessr-bund-flagship-store.webp",
     "gallery": [
       "/images/projects/gallery/dinessr-bund-flagship-store-01.webp",
       "/images/projects/gallery/dinessr-bund-flagship-store-02.webp",
       "/images/projects/gallery/dinessr-bund-flagship-store-03.webp"
     ],
-    "credits": [{ "role": "Project Line", "name": "Tzone / 图域" }],
+    "credits": [
+      {
+        "role": "Project Line",
+        "name": "Tzone / 图域"
+      }
+    ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "Dinessr Bund Flagship Store",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Brand & Commercial Environments"
   },
   {
     "slug": "drop-flow",
@@ -360,7 +616,11 @@
     "clientOrContext": "Virtura Collective",
     "oneLiner": "围绕实时音画互动、空间迁移与数字自然叙事展开的长期系列。",
     "description": "从一个点、一滴水和一种流动状态出发，逐步扩展为环幕、超宽屏、展演与未来穹顶版本。",
-    "keywords": ["实时音画", "数字自然", "空间影像"],
+    "keywords": [
+      "实时音画",
+      "数字自然",
+      "空间影像"
+    ],
     "cover": "/images/projects/covers/drop-flow.webp",
     "gallery": [
       "/images/projects/gallery/drop-flow-01.webp",
@@ -368,13 +628,32 @@
       "/images/projects/gallery/drop-flow-03.webp"
     ],
     "credits": [
-      { "role": "Visual System / Spatial Image", "name": "Ewan Qian 钱誉文" },
-      { "role": "Music / Sound", "name": "Hao Xu 徐昊" },
-      { "role": "Interaction / Installation", "name": "Sihui Xu 许思慧" },
-      { "role": "Collaborators", "name": "Xiaoyao Ma 马逍遥, Minxuan Huang 黄敏萱 and others" }
+      {
+        "role": "Visual System / Spatial Image",
+        "name": "Ewan Qian 钱誉文"
+      },
+      {
+        "role": "Music / Sound",
+        "name": "Hao Xu 徐昊"
+      },
+      {
+        "role": "Interaction / Installation",
+        "name": "Sihui Xu 许思慧"
+      },
+      {
+        "role": "Collaborators",
+        "name": "Xiaoyao Ma 马逍遥, Minxuan Huang 黄敏萱 and others"
+      }
     ],
     "visibility": "public",
-    "featured": true
+    "featured": true,
+    "title_en": "Drop Flow",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Spatial Media & Live Visuals"
   },
   {
     "slug": "timer",
@@ -387,7 +666,11 @@
     "clientOrContext": "Virtura Collective",
     "oneLiner": "围绕时间、节拍、频段与图像内部结构展开的音画互动系列。",
     "description": "连接实验原型、杭州首演、学术获奖、环形沉浸展览和未来空间化版本。",
-    "keywords": ["时间结构", "音画互动", "沉浸展演"],
+    "keywords": [
+      "时间结构",
+      "音画互动",
+      "沉浸展演"
+    ],
     "cover": "/images/projects/covers/timer.webp",
     "gallery": [
       "/images/projects/gallery/timer-01.webp",
@@ -395,12 +678,28 @@
       "/images/projects/gallery/timer-03.webp"
     ],
     "credits": [
-      { "role": "Visual Design", "name": "Ewan Qian 钱誉文" },
-      { "role": "Composition / Electronic Music", "name": "Hao Xu 徐昊" },
-      { "role": "Interaction Collaboration", "name": "Sihui Xu 许思慧" }
+      {
+        "role": "Visual Design",
+        "name": "Ewan Qian 钱誉文"
+      },
+      {
+        "role": "Composition / Electronic Music",
+        "name": "Hao Xu 徐昊"
+      },
+      {
+        "role": "Interaction Collaboration",
+        "name": "Sihui Xu 许思慧"
+      }
     ],
     "visibility": "public",
-    "featured": true
+    "featured": true,
+    "title_en": "TIMER",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Spatial Media & Live Visuals"
   },
   {
     "slug": "titan-holographic-sound-forest",
@@ -413,16 +712,36 @@
     "clientOrContext": "Virtura Collective",
     "oneLiner": "将视觉作为氛围、空间结构与观演关系的一部分。",
     "description": "围绕程序化生成、音画联动、时间结构与空间生成展开，视觉语言聚焦雾气、光线、白空间深度与感知运动。",
-    "keywords": ["现场影像", "观演关系", "空间氛围"],
+    "keywords": [
+      "现场影像",
+      "观演关系",
+      "空间氛围"
+    ],
     "cover": "/images/projects/covers/titan-holographic-sound-forest.webp",
     "gallery": [],
     "credits": [
-      { "role": "Music / Performance", "name": "KASHIWA Daisuke" },
-      { "role": "Music / Performance", "name": "Yuki Murata" },
-      { "role": "Visual System", "name": "Ewan Qian 钱誉文" }
+      {
+        "role": "Music / Performance",
+        "name": "KASHIWA Daisuke"
+      },
+      {
+        "role": "Music / Performance",
+        "name": "Yuki Murata"
+      },
+      {
+        "role": "Visual System",
+        "name": "Ewan Qian 钱誉文"
+      }
     ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "TITAN with Ewan Qian",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "XR / Vision Pro / Spatial Computing"
   },
   {
     "slug": "observation-and-symbiosis",
@@ -435,7 +754,11 @@
     "clientOrContext": "Virtura / XUAN context",
     "oneLiner": "在公共空间中呈现数字自然、点云结构与共生关系。",
     "description": "通过地理数据、动态粒子系统与公共空间影像，把数据结构转化为持续流淌的数字景观。",
-    "keywords": ["数字自然", "数据景观", "公共空间"],
+    "keywords": [
+      "数字自然",
+      "数据景观",
+      "公共空间"
+    ],
     "cover": "/images/projects/covers/observation-and-symbiosis.webp",
     "gallery": [
       "/images/projects/gallery/observation-and-symbiosis-01.webp",
@@ -443,11 +766,24 @@
       "/images/projects/gallery/observation-and-symbiosis-03.webp"
     ],
     "credits": [
-      { "role": "Creative Context", "name": "VIRTURA / XUAN" },
-      { "role": "Seen Publicly", "name": "Shen Xuan 沈轩, Ewan Qian 钱誉文" }
+      {
+        "role": "Creative Context",
+        "name": "VIRTURA / XUAN"
+      },
+      {
+        "role": "Seen Publicly",
+        "name": "Shen Xuan 沈轩, Ewan Qian 钱誉文"
+      }
     ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "Observation and Symbiosis",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "XR / Vision Pro / Spatial Computing"
   },
   {
     "slug": "control-club",
@@ -460,15 +796,32 @@
     "clientOrContext": "Virtura member work",
     "oneLiner": "通过系统逻辑与游戏化结构构建感知路径。",
     "description": "围绕规则、选择、反馈、加速与控制机制展开，以视频和文字档案构成第一版公开入口。",
-    "keywords": ["Machinima", "系统逻辑", "游戏结构"],
+    "keywords": [
+      "Machinima",
+      "系统逻辑",
+      "游戏结构"
+    ],
     "cover": "/images/projects/covers/control-club.webp",
     "gallery": [],
     "credits": [
-      { "role": "Artist", "name": "Murphy Nile / 周子凌" },
-      { "role": "Context", "name": "Shared within the VIRTURA presentation context" }
+      {
+        "role": "Artist",
+        "name": "Murphy Nile / 周子凌"
+      },
+      {
+        "role": "Context",
+        "name": "Shared within the VIRTURA presentation context"
+      }
     ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "Control Club",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Spatial Media & Live Visuals"
   },
   {
     "slug": "desire-machining-center",
@@ -481,14 +834,31 @@
     "clientOrContext": "Virtura member work",
     "oneLiner": "围绕低欲望社会、虚拟代偿与选择-反馈-强化机制展开的交互装置。",
     "description": "通过多屏结构与叙事模块构建由欲望驱动的系统环境，观众以身体触发影像与叙事单元。",
-    "keywords": ["交互装置", "多屏叙事", "行为反馈"],
+    "keywords": [
+      "交互装置",
+      "多屏叙事",
+      "行为反馈"
+    ],
     "cover": "/images/projects/covers/desire-machining-center.webp",
     "gallery": [],
     "credits": [
-      { "role": "Artist", "name": "Sihui Xu / 许思慧" },
-      { "role": "Context", "name": "Shared within the VIRTURA presentation context" }
+      {
+        "role": "Artist",
+        "name": "Sihui Xu / 许思慧"
+      },
+      {
+        "role": "Context",
+        "name": "Shared within the VIRTURA presentation context"
+      }
     ],
     "visibility": "public",
-    "featured": false
+    "featured": false,
+    "title_en": "Desire Machining Center",
+    "media_type": "image",
+    "external_url": "",
+    "external_video_url": "",
+    "public_status": "public-preview",
+    "needs_clean_cover": false,
+    "categoryGroup": "Spatial Media & Live Visuals"
   }
 ]

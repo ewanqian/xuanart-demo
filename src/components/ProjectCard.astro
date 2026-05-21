@@ -4,11 +4,15 @@ const { project, compact = false } = Astro.props;
 const searchText = [
   project.title,
   project.titleEn,
+  project.title_en,
   project.category,
+  project.categoryGroup,
   project.type,
   project.role,
   project.clientOrContext,
   project.oneLiner,
+  project.media_type,
+  project.visibility,
   ...(project.keywords ?? []),
   ...(project.credits ?? []).map((credit) => `${credit.role} ${credit.name}`),
 ]
@@ -24,12 +28,16 @@ const searchText = [
   )}
   <div class="card-body">
     <div class="card-top">
-      <span>{project.category}</span>
+      <span>{project.categoryGroup ?? project.category}</span>
       <span>{project.year}</span>
     </div>
     <h3>{project.title}</h3>
-    <p class="en">{project.titleEn}</p>
+    <p class="en">{project.title_en ?? project.titleEn}</p>
     <p>{project.oneLiner}</p>
+    <div class="media-row">
+      <span>{project.media_type === "external" ? "External Video" : "Image Case"}</span>
+      <span>{project.visibility ?? "public-preview"}</span>
+    </div>
     <div class="tag-list">
       {project.keywords.slice(0, 3).map((tag) => <span class="tag">{tag}</span>)}
     </div>
@@ -105,6 +113,21 @@ const searchText = [
     margin-bottom: 18px;
     color: var(--ink);
     font-size: 13px;
+  }
+
+  .media-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .media-row span {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 8px;
+    color: var(--blue);
+    font-size: 11px;
   }
 
   .tag-list {

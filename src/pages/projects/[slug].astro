@@ -19,9 +19,9 @@ const credits = project.credits ?? [];
     <section class="project-hero">
       <div class="container two-col">
         <div>
-          <p class="eyebrow">{project.category}</p>
+          <p class="eyebrow">{project.categoryGroup ?? project.category}</p>
           <h1>{project.title}</h1>
-          <p class="lead">{project.titleEn}</p>
+          <p class="lead">{project.title_en ?? project.titleEn}</p>
         </div>
         <aside class="thin-card">
           <dl>
@@ -29,6 +29,8 @@ const credits = project.credits ?? [];
             <div><dt>Type</dt><dd>{project.type}</dd></div>
             <div><dt>Role</dt><dd>{project.role}</dd></div>
             <div><dt>Context</dt><dd>{project.clientOrContext}</dd></div>
+            <div><dt>Media</dt><dd>{project.media_type ?? "image"}</dd></div>
+            <div><dt>Status</dt><dd>{project.public_status ?? project.visibility ?? "public-preview"}</dd></div>
           </dl>
         </aside>
       </div>
@@ -50,6 +52,14 @@ const credits = project.credits ?? [];
           <div class="tag-list">
             {project.keywords.map((tag) => <span class="tag">{tag}</span>)}
           </div>
+          {(project.external_video_url || project.external_url) && (
+            <div class="media-link">
+              <p class="eyebrow">External Media</p>
+              <a class="button secondary" href={project.external_video_url || project.external_url} target="_blank" rel="noreferrer">
+                打开外部视频 / 链接
+              </a>
+            </div>
+          )}
           {credits.length > 0 && (
             <div class="credit-list">
               <p class="eyebrow">Credits</p>
@@ -153,6 +163,10 @@ const credits = project.credits ?? [];
 
   .credit-list {
     margin-top: 32px;
+  }
+
+  .media-link {
+    margin-top: 28px;
   }
 
   .credit-list dl {

@@ -1,6 +1,6 @@
 ---
 import Layout from "../components/Layout.astro";
-import site from "../data/site.json";
+import links from "../data/links.json";
 ---
 
 <Layout title="联系 | XUAN Spatial Perception">
@@ -10,13 +10,40 @@ import site from "../data/site.json";
         <p class="eyebrow">Contact</p>
         <h1>商务合作 / 预约项目沟通</h1>
         <p class="lead">Business Inquiries / Schedule a Project Conversation</p>
+        <div class="button-row">
+          <a class="button" href="/projects">View Portfolio</a>
+          <a class="button secondary" href="/exhibition">Exhibition Entry</a>
+        </div>
       </div>
       <div class="contact-card">
-        {Object.entries(site.contact).map(([key, value]) => (
-          <div>
-            <span>{key}</span>
-            <strong>{value}</strong>
+        {links.map((item) => (
+          <div class="contact-row">
+            <span>{item.label}</span>
+            {item.href ? (
+              <a href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noreferrer" : undefined}>
+                {item.value}
+              </a>
+            ) : (
+              <strong>{item.value}</strong>
+            )}
           </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">QR / Social</p>
+        <h2 class="section-title">公众号、小红书、抖音二维码待补充。</h2>
+      </div>
+      <div class="qr-grid">
+        {links.filter((item) => ["wechat", "xiaohongshu", "douyin"].includes(item.id)).map((item) => (
+          <article class="qr-card">
+            {item.qr ? <img src={item.qr} alt={`${item.label} QR`} loading="lazy" /> : <div class="qr-placeholder">TBD</div>}
+            <p>{item.label}</p>
+          </article>
         ))}
       </div>
     </div>
@@ -25,7 +52,7 @@ import site from "../data/site.json";
 
 <style>
   .page-hero {
-    min-height: calc(100vh - 72px);
+    min-height: 72vh;
     display: grid;
     align-items: center;
     padding: 76px 0;
@@ -33,9 +60,10 @@ import site from "../data/site.json";
 
   h1 {
     margin: 12px 0 0;
-    font-size: clamp(30px, 4.5vw, 56px);
+    font-size: clamp(30px, 4.1vw, 52px);
     line-height: 1.22;
     font-weight: 560;
+    word-break: keep-all;
   }
 
   .contact-card {
@@ -45,7 +73,7 @@ import site from "../data/site.json";
     overflow: hidden;
   }
 
-  .contact-card div {
+  .contact-row {
     display: grid;
     grid-template-columns: 140px 1fr;
     gap: 18px;
@@ -53,7 +81,7 @@ import site from "../data/site.json";
     border-bottom: 1px solid var(--line);
   }
 
-  .contact-card div:last-child {
+  .contact-row:last-child {
     border-bottom: 0;
   }
 
@@ -63,16 +91,66 @@ import site from "../data/site.json";
     text-transform: uppercase;
   }
 
-  strong {
+  strong,
+  .contact-row a {
     font-size: 16px;
     line-height: 1.45;
     font-weight: 520;
     overflow-wrap: anywhere;
   }
 
+  .contact-row a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .qr-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .qr-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.58);
+  }
+
+  .qr-card img,
+  .qr-placeholder {
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+
+  .qr-placeholder {
+    display: grid;
+    place-items: center;
+    color: var(--blue);
+    background:
+      linear-gradient(90deg, rgba(49, 95, 214, 0.08) 1px, transparent 1px) 0 0 / 18px 18px,
+      linear-gradient(0deg, rgba(49, 95, 214, 0.08) 1px, transparent 1px) 0 0 / 18px 18px,
+      rgba(255, 255, 255, 0.72);
+    font-size: 12px;
+  }
+
+  .qr-card p {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
   @media (max-width: 560px) {
-    .contact-card div {
+    .contact-row,
+    .qr-grid {
       grid-template-columns: 1fr;
+    }
+
+    .contact-row {
       gap: 8px;
     }
   }

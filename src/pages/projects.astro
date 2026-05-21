@@ -3,17 +3,17 @@ import Layout from "../components/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import projects from "../data/projects.json";
 
-const categories = [...new Set(projects.map((project) => project.category))];
+const categories = [...new Set(projects.map((project) => project.categoryGroup ?? project.category))];
 ---
 
-<Layout title="项目 | XUAN Spatial Perception">
+<Layout title="Works | XUAN Spatial Perception">
   <section class="page-hero">
     <div class="container">
-      <p class="eyebrow">Projects</p>
-      <h1>项目图库与内容线</h1>
-      <p class="lead">图域空间项目、Virtura 作品线、成员作品与展会精选素材。</p>
+      <p class="eyebrow">Works</p>
+      <h1>代表项目 / Selected Works</h1>
+      <p class="lead">以项目封面、短说明和清晰分类组织第一版作品入口。视频项目先使用封面与外链字段，不直接把大视频塞进 GitHub。</p>
       <div class="search-panel">
-        <label for="project-search">搜索项目 / Search</label>
+        <label for="project-search">Search</label>
         <input id="project-search" type="search" placeholder="输入项目、品牌、作者或关键词" data-project-search />
         <span data-project-count>{projects.length} entries</span>
       </div>
@@ -25,11 +25,11 @@ const categories = [...new Set(projects.map((project) => project.category))];
       <div class="container">
         <div class="category-head">
           <p class="eyebrow">{category}</p>
-          <span>{projects.filter((project) => project.category === category).length} entries</span>
+          <span>{projects.filter((project) => (project.categoryGroup ?? project.category) === category).length} entries</span>
         </div>
         <div class="project-grid">
           {projects
-            .filter((project) => project.category === category)
+            .filter((project) => (project.categoryGroup ?? project.category) === category)
             .map((project) => <ProjectCard project={project} compact />)}
         </div>
       </div>

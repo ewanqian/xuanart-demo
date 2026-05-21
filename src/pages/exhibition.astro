@@ -3,6 +3,8 @@ import Layout from "../components/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import site from "../data/site.json";
 import projects from "../data/projects.json";
+import xrExperiences from "../data/xr-experiences.json";
+import eventMedia from "../data/event-media.json";
 
 const featured = projects.filter((project) => project.featured).slice(0, 4);
 ---
@@ -43,6 +45,45 @@ const featured = projects.filter((project) => project.featured).slice(0, 4);
       <ol class="route-list">
         {site.exhibition.route.map((item) => <li>{item}</li>)}
       </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Vision Pro / XR</p>
+        <h2 class="section-title">头显端优先展示 360 / 全景 / 空间视频内容。</h2>
+        <p class="lead">当前写为 Demo / Prototype / Exhibition Preview。少而稳定，避免做成普通官网菜单。</p>
+      </div>
+      <div class="experience-list">
+        {xrExperiences.map((item) => (
+          <article>
+            <span>{item.type}</span>
+            <h3>{item.title}</h3>
+            <p>{item.summary}</p>
+            <small>{item.device} / {item.status}</small>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">LED Loop</p>
+        <h2 class="section-title">大屏作为循环媒体和品牌氛围播放。</h2>
+      </div>
+      <div class="experience-list">
+        {eventMedia.map((item) => (
+          <article>
+            <span>{item.use}</span>
+            <h3>{item.title}</h3>
+            <p>{item.duration} / {item.format} / {item.status}</p>
+            <small>不在首页加载大视频</small>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -148,6 +189,38 @@ const featured = projects.filter((project) => project.featured).slice(0, 4);
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
     margin-top: 28px;
+  }
+
+  .experience-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .experience-list article {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.58);
+  }
+
+  .experience-list span,
+  .experience-list small {
+    color: var(--blue);
+    font-size: 12px;
+  }
+
+  .experience-list h3 {
+    margin: 12px 0 8px;
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 560;
+  }
+
+  .experience-list p {
+    margin: 0 0 10px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.72;
   }
 
   .reference-grid {

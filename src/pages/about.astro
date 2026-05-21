@@ -1,6 +1,29 @@
 ---
 import Layout from "../components/Layout.astro";
+import TeamGrid from "../components/TeamGrid.astro";
 import site from "../data/site.json";
+import members from "../data/members.json";
+
+const brandLayers = [
+  {
+    index: "01",
+    title: "XUAN / 轩空间感知",
+    label: "Brand Framework",
+    body: "轩空间感知是面向外部展示的整体品牌与方法框架。它从真实场所出发，将地方文化、历史材料、品牌内容与数字媒介整理成可观看、可行走、可进入的空间体验。",
+  },
+  {
+    index: "02",
+    title: "Tzone / 图域",
+    label: "New Media Spatial Design",
+    body: "图域承载空间设计、文旅展陈、博物馆空间、展览空间与企业品牌空间的成熟项目经验，面向真实场地完成内容、影像、动线与实施落地。",
+  },
+  {
+    index: "03",
+    title: "Virtura Collective",
+    label: "Tools / Systems / Creative Network",
+    body: "Virtura 承载空间影像、实时系统、数字艺术、工具研发与创意网络，围绕 XR、Vision Pro、现场影像和空间计算建立可持续更新的内容方法。",
+  },
+];
 ---
 
 <Layout title="关于 | XUAN Spatial Perception">
@@ -16,11 +39,43 @@ import site from "../data/site.json";
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Structure</p>
+      <h2 class="section-title">一个品牌框架，两条内容与项目能力线。</h2>
+      <div class="layer-grid">
+        {brandLayers.map((layer) => (
+          <article class="layer-card">
+            <span>{layer.index}</span>
+            <p class="eyebrow">{layer.label}</p>
+            <h3>{layer.title}</h3>
+            <p>{layer.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Team</p>
+        <h2 class="section-title">Members / 团队头像墙</h2>
+      </div>
+      <div>
+        <p class="lead">第一版先保留团队数据结构和占位。正式头像、姓名、角色与简介补齐后，可直接替换 `src/data/members.json`。</p>
+      </div>
+    </div>
+    <div class="container">
+      <TeamGrid members={members} />
+    </div>
+  </section>
 </Layout>
 
 <style>
   .page-hero {
-    min-height: calc(100vh - 72px);
+    min-height: 72vh;
     display: grid;
     align-items: center;
     padding: 76px 0;
@@ -31,5 +86,49 @@ import site from "../data/site.json";
     font-size: clamp(36px, 6vw, 84px);
     line-height: 1.06;
     font-weight: 560;
+  }
+
+  .layer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .layer-card {
+    min-height: 360px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.58);
+  }
+
+  .layer-card > span {
+    color: var(--blue);
+    font-size: 12px;
+  }
+
+  .layer-card h3 {
+    margin: 44px 0 18px;
+    font-size: clamp(24px, 3vw, 38px);
+    line-height: 1.15;
+    font-weight: 560;
+  }
+
+  .layer-card p:not(.eyebrow) {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.88;
+  }
+
+  @media (max-width: 900px) {
+    .page-hero {
+      min-height: auto;
+    }
+
+    .layer-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

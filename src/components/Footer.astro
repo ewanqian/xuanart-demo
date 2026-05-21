@@ -1,5 +1,9 @@
 ---
 import site from "../data/site.json";
+import links from "../data/links.json";
+
+const website = links.find((item) => item.id === "website");
+const email = links.find((item) => item.id === "email");
 ---
 
 <footer class="footer">
@@ -11,8 +15,8 @@ import site from "../data/site.json";
     <div class="meta">
       <p>{site.brand.tagline}</p>
       <p>{site.brand.taglineEn}</p>
-      <p>Website: {site.contact.website}</p>
-      {site.contact.email !== "待补充" && <p>Email: {site.contact.email}</p>}
+      {website && <p>Website: <a href={website.href}>{website.value}</a></p>}
+      {email && email.value !== "TBD" && <p>Email: <a href={email.href}>{email.value}</a></p>}
     </div>
   </div>
 </footer>
@@ -38,6 +42,11 @@ import site from "../data/site.json";
 
   p {
     margin: 0 0 8px;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
 
   @media (max-width: 700px) {
