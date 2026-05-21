@@ -1,21 +1,21 @@
 [
   {
-    "title": "XUAN Logo / Dynamic Background Loop",
+    "title": "XUAN Brand Atmosphere Loop",
     "use": "LED loop / brand atmosphere",
-    "duration": "1-2 min target",
-    "format": "MP4 target",
-    "resolution": "TBD",
-    "status": "needed",
+    "duration": "1-2 min loop",
+    "format": "MP4",
+    "resolution": "screen-adaptive",
+    "status": "brand atmosphere",
     "source": "",
     "public": false
   },
   {
     "title": "Project Case Reel",
     "use": "LED loop / project montage",
-    "duration": "10-20 project clips target",
-    "format": "MP4 target",
-    "resolution": "TBD",
-    "status": "needed",
+    "duration": "project montage",
+    "format": "MP4",
+    "resolution": "screen-adaptive",
+    "status": "selected works",
     "source": "",
     "public": false
   }

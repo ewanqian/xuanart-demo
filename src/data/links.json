@@ -10,7 +10,7 @@
   {
     "id": "wechat",
     "label": "微信公众号 / WeChat Official Account",
-    "value": "TBD",
+    "value": "",
     "href": "",
     "type": "qr",
     "qr": null
@@ -18,7 +18,7 @@
   {
     "id": "xiaohongshu",
     "label": "小红书 / RED",
-    "value": "TBD",
+    "value": "",
     "href": "",
     "type": "link",
     "qr": null
@@ -26,7 +26,7 @@
   {
     "id": "douyin",
     "label": "抖音 / Douyin",
-    "value": "TBD",
+    "value": "",
     "href": "",
     "type": "link",
     "qr": null
@@ -34,7 +34,7 @@
   {
     "id": "email",
     "label": "邮箱 / Email",
-    "value": "TBD",
+    "value": "",
     "href": "",
     "type": "email",
     "qr": null
@@ -42,7 +42,7 @@
   {
     "id": "phone",
     "label": "电话 / Phone",
-    "value": "TBD",
+    "value": "",
     "href": "",
     "type": "phone",
     "qr": null

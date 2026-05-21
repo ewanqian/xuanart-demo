@@ -14,19 +14,37 @@
       "title": "从城市到山野",
       "titleEn": "From City to Landscape",
       "body": "面向城市更新、乡野文旅、山水现场与公共空间，整理地方关系、自然材料与观看路径，形成可停留、可传播的现场体验。",
-      "keywords": ["文旅与地方空间", "在地叙事", "自然教育", "城市更新", "公共空间体验"]
+      "keywords": [
+        "文旅与地方空间",
+        "在地叙事",
+        "自然教育",
+        "城市更新",
+        "公共空间体验"
+      ]
     },
     {
       "title": "从过去到未来",
       "titleEn": "From Heritage to Future",
       "body": "将档案、材料、城市记忆与未来想象转化为空间路径。观众在行走中理解时间，在观看中进入历史与未来。",
-      "keywords": ["博物馆展陈", "城市文化", "历史材料显影", "城市记忆转译", "未来场景预演"]
+      "keywords": [
+        "博物馆展陈",
+        "城市文化",
+        "历史材料显影",
+        "城市记忆转译",
+        "未来场景预演"
+      ]
     },
     {
       "title": "从数字到现实",
       "titleEn": "From Digital to Physical Space",
       "body": "通过实时影像、XR、Vision Pro 与空间计算，显示结构、过程、记忆、数据、未来状态与人的行为路径。",
-      "keywords": ["空间影像系统", "实时预演", "XR 体验", "空间计算", "虚实信息叠加"]
+      "keywords": [
+        "空间影像系统",
+        "实时预演",
+        "XR 体验",
+        "空间计算",
+        "虚实信息叠加"
+      ]
     }
   ],
   "method": {
@@ -43,16 +61,21 @@
   "exhibition": {
     "name": "XUAN Guangzhou Edition 2026",
     "summary": "广州展会现场扫码入口。保留展墙核心文案、项目入口与联系方式，移动端优先。",
-    "route": ["轩空间感知", "图域项目线", "Virtura 内容线", "商务合作"],
+    "route": [
+      "轩空间感知",
+      "图域项目线",
+      "Virtura 内容线",
+      "商务合作"
+    ],
     "wallText": "让空间重新被感受到",
     "wallTextEn": "Let Space Be Felt Again."
   },
   "contact": {
     "website": "xuanart.com",
-    "wechat": "待补充",
-    "red": "待补充",
-    "email": "待补充",
-    "phone": "待补充",
+    "wechat": "",
+    "red": "",
+    "email": "",
+    "phone": "",
     "address": "Shanghai / Guangzhou / Remote"
   }
 }

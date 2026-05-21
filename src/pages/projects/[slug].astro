@@ -12,6 +12,15 @@ export function getStaticPaths() {
 const { project } = Astro.props;
 const gallery = project.gallery ?? [];
 const credits = project.credits ?? [];
+const displayYear = project.year || null;
+const mediaLabel = project.media_type === "external" ? "External Media" : "Project Images";
+const detailRows = [
+  displayYear && ["Year", displayYear],
+  ["Type", project.type],
+  ["Role", project.role],
+  ["Context", project.clientOrContext],
+  ["Media", mediaLabel],
+].filter(Boolean);
 const pageTitle = project.slug === "titan-holographic-sound-forest"
   ? project.title
   : `${project.title} | XUAN Spatial Perception`;
@@ -31,12 +40,9 @@ const pageDescription = project.slug === "titan-holographic-sound-forest"
         </div>
         <aside class="thin-card">
           <dl>
-            <div><dt>Year</dt><dd>{project.year}</dd></div>
-            <div><dt>Type</dt><dd>{project.type}</dd></div>
-            <div><dt>Role</dt><dd>{project.role}</dd></div>
-            <div><dt>Context</dt><dd>{project.clientOrContext}</dd></div>
-            <div><dt>Media</dt><dd>{project.media_type ?? "image"}</dd></div>
-            <div><dt>Status</dt><dd>{project.public_status ?? project.visibility ?? "public-preview"}</dd></div>
+            {detailRows.map(([label, value]) => (
+              <div><dt>{label}</dt><dd>{value}</dd></div>
+            ))}
           </dl>
         </aside>
       </div>

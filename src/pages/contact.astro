@@ -1,6 +1,9 @@
 ---
 import Layout from "../components/Layout.astro";
 import links from "../data/links.json";
+
+const visibleLinks = links.filter((item) => item.value);
+const socialQr = links.filter((item) => item.qr);
 ---
 
 <Layout title="联系 | XUAN Spatial Perception">
@@ -16,7 +19,7 @@ import links from "../data/links.json";
         </div>
       </div>
       <div class="contact-card">
-        {links.map((item) => (
+        {visibleLinks.map((item) => (
           <div class="contact-row">
             <span>{item.label}</span>
             {item.href ? (
@@ -32,22 +35,24 @@ import links from "../data/links.json";
     </div>
   </section>
 
-  <section class="section">
-    <div class="container two-col">
-      <div>
-        <p class="eyebrow">QR / Social</p>
-        <h2 class="section-title">公众号、小红书、抖音二维码待补充。</h2>
+  {socialQr.length > 0 && (
+    <section class="section">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">QR / Social</p>
+          <h2 class="section-title">社交平台入口</h2>
+        </div>
+        <div class="qr-grid">
+          {socialQr.map((item) => (
+            <article class="qr-card">
+              <img src={item.qr} alt={`${item.label} QR`} loading="lazy" />
+              <p>{item.label}</p>
+            </article>
+          ))}
+        </div>
       </div>
-      <div class="qr-grid">
-        {links.filter((item) => ["wechat", "xiaohongshu", "douyin"].includes(item.id)).map((item) => (
-          <article class="qr-card">
-            {item.qr ? <img src={item.qr} alt={`${item.label} QR`} loading="lazy" /> : <div class="qr-placeholder">TBD</div>}
-            <p>{item.label}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
+    </section>
+  )}
 </Layout>
 
 <style>
@@ -118,23 +123,11 @@ import links from "../data/links.json";
     background: rgba(255, 255, 255, 0.58);
   }
 
-  .qr-card img,
-  .qr-placeholder {
+  .qr-card img {
     width: 100%;
     aspect-ratio: 1;
     border: 1px solid var(--line);
     border-radius: 8px;
-  }
-
-  .qr-placeholder {
-    display: grid;
-    place-items: center;
-    color: var(--blue);
-    background:
-      linear-gradient(90deg, rgba(49, 95, 214, 0.08) 1px, transparent 1px) 0 0 / 18px 18px,
-      linear-gradient(0deg, rgba(49, 95, 214, 0.08) 1px, transparent 1px) 0 0 / 18px 18px,
-      rgba(255, 255, 255, 0.72);
-    font-size: 12px;
   }
 
   .qr-card p {

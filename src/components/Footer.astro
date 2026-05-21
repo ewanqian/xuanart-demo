@@ -16,7 +16,7 @@ const email = links.find((item) => item.id === "email");
       <p>{site.brand.tagline}</p>
       <p>{site.brand.taglineEn}</p>
       {website && <p>Website: <a href={website.href}>{website.value}</a></p>}
-      {email && email.value !== "TBD" && <p>Email: <a href={email.href}>{email.value}</a></p>}
+      {email?.value && <p>Email: <a href={email.href}>{email.value}</a></p>}
     </div>
   </div>
 </footer>

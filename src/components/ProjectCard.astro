@@ -1,5 +1,7 @@
 ---
 const { project, compact = false } = Astro.props;
+const displayYear = project.year || null;
+const mediaLabel = project.media_type === "external" ? "External Media" : "Project Images";
 
 const searchText = [
   project.title,
@@ -29,14 +31,14 @@ const searchText = [
   <div class="card-body">
     <div class="card-top">
       <span>{project.categoryGroup ?? project.category}</span>
-      <span>{project.year}</span>
+      {displayYear && <span>{displayYear}</span>}
     </div>
     <h3>{project.title}</h3>
     <p class="en">{project.title_en ?? project.titleEn}</p>
     <p>{project.oneLiner}</p>
     <div class="media-row">
-      <span>{project.media_type === "external" ? "External Video" : "Image Case"}</span>
-      <span>{project.visibility ?? "public-preview"}</span>
+      <span>{mediaLabel}</span>
+      <span>{project.role}</span>
     </div>
     <div class="tag-list">
       {project.keywords.slice(0, 3).map((tag) => <span class="tag">{tag}</span>)}
