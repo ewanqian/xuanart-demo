@@ -13,7 +13,7 @@ const { members = [] } = Astro.props;
       <div>
         <h3>{member.name}</h3>
         <p class="role">{member.role}</p>
-        <p>{member.bio}</p>
+        {member.bio && <p>{member.bio}</p>}
       </div>
     </article>
   ))}
@@ -22,17 +22,24 @@ const { members = [] } = Astro.props;
 <style>
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
     margin-top: 32px;
   }
 
   .member-card {
-    display: grid;
-    gap: 16px;
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
     border: 1px solid var(--line);
     border-radius: 8px;
-    padding: 16px;
+    background: rgba(255, 255, 255, 0.62);
+    overflow: hidden;
+  }
+
+  .member-card:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
     background: rgba(255, 255, 255, 0.58);
   }
 
@@ -40,8 +47,6 @@ const { members = [] } = Astro.props;
   .avatar-placeholder {
     width: 100%;
     aspect-ratio: 1;
-    border: 1px solid var(--line);
-    border-radius: 8px;
     object-fit: cover;
     background:
       linear-gradient(135deg, rgba(49, 95, 214, 0.12), rgba(255, 240, 105, 0.16)),
@@ -52,13 +57,17 @@ const { members = [] } = Astro.props;
     display: grid;
     place-items: center;
     color: var(--blue);
-    font-size: 44px;
+    font-size: 34px;
     font-weight: 560;
   }
 
+  .member-card > div {
+    padding: 14px;
+  }
+
   h3 {
-    margin: 0 0 8px;
-    font-size: 22px;
+    margin: 0 0 6px;
+    font-size: clamp(16px, 1.8vw, 20px);
     line-height: 1.2;
     font-weight: 560;
   }
@@ -71,15 +80,21 @@ const { members = [] } = Astro.props;
   }
 
   .role {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     color: var(--blue);
-    font-size: 12px;
+    font-size: 11px;
+    line-height: 1.35;
     text-transform: uppercase;
   }
 
   @media (max-width: 860px) {
     .team-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .member-card:first-child {
+      grid-column: span 2;
+      grid-row: auto;
     }
   }
 </style>

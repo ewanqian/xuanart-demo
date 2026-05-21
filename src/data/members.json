@@ -1,20 +1,98 @@
 [
   {
-    "name": "TBD",
-    "role": "XUAN / 轩空间感知",
-    "bio": "团队成员姓名、头像与角色待补充。",
-    "avatar": null
+    "name": "沈轩 Johnny Shen",
+    "role": "Founder / Curator / Designer / Digital Artist",
+    "bio": "",
+    "avatar": "/images/team/johnny-shen.webp"
   },
   {
-    "name": "TBD",
-    "role": "Tzone / 图域",
-    "bio": "空间设计、文旅展陈与项目实施成员资料待补充。",
-    "avatar": null
+    "name": "Rico Liang",
+    "role": "Business / Senior Partner",
+    "bio": "",
+    "avatar": "/images/team/rico-liang.webp"
   },
   {
-    "name": "TBD",
-    "role": "Virtura Collective",
-    "bio": "空间影像、实时系统、数字艺术与工具研发成员资料待补充。",
-    "avatar": null
+    "name": "Ewan Qian",
+    "role": "Digital Artist / Virtura Manager",
+    "bio": "",
+    "avatar": "/images/team/ewan-qian.webp"
+  },
+  {
+    "name": "Jile Tan",
+    "role": "Director / Screenwriter",
+    "bio": "",
+    "avatar": "/images/team/jile-tan.webp"
+  },
+  {
+    "name": "Fang Fang",
+    "role": "Visual Artist",
+    "bio": "",
+    "avatar": "/images/team/fang-fang.webp"
+  },
+  {
+    "name": "Jennie Zhou",
+    "role": "Illustrator / Stage Designer",
+    "bio": "",
+    "avatar": "/images/team/jennie-zhou.webp"
+  },
+  {
+    "name": "Sihui Xu",
+    "role": "Interaction Designer / Spatial Visual",
+    "bio": "",
+    "avatar": "/images/team/sihui-xu.webp"
+  },
+  {
+    "name": "Yang Wang",
+    "role": "Space Design / Engineering Management",
+    "bio": "",
+    "avatar": "/images/team/yang-wang.webp"
+  },
+  {
+    "name": "Hao Xu",
+    "role": "Electronic Music Producer",
+    "bio": "",
+    "avatar": "/images/team/hao-xu.webp"
+  },
+  {
+    "name": "Xiaoyao Ma",
+    "role": "Interactive Media Artist",
+    "bio": "",
+    "avatar": "/images/team/xiaoyao-ma.webp"
+  },
+  {
+    "name": "Murphy Nile",
+    "role": "Multimedia Artist",
+    "bio": "",
+    "avatar": "/images/team/murphy-nile.webp"
+  },
+  {
+    "name": "David Li",
+    "role": "Hardware Engineer / On-site Management",
+    "bio": "",
+    "avatar": "/images/team/david-li.webp"
+  },
+  {
+    "name": "Cicy Gong",
+    "role": "Project Manager / Graphic Designer",
+    "bio": "",
+    "avatar": "/images/team/cicy-gong.webp"
+  },
+  {
+    "name": "Anthoni Dinapoli",
+    "role": "Visual Artist / DJ",
+    "bio": "",
+    "avatar": "/images/team/anthoni-dinapoli.webp"
+  },
+  {
+    "name": "Lorena Zhu",
+    "role": "Graphic Designer / Graphic Research",
+    "bio": "",
+    "avatar": "/images/team/lorena-zhu.webp"
+  },
+  {
+    "name": "Aqua Huang",
+    "role": "Planner / Content Research",
+    "bio": "",
+    "avatar": "/images/team/aqua-huang.webp"
   }
 ]

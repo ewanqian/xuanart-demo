@@ -703,45 +703,85 @@
   },
   {
     "slug": "titan-holographic-sound-forest",
-    "title": "TITAN: A Holographic Sound Forest",
-    "titleEn": "TITAN with Ewan Qian",
+    "title": "机械光合：TITAN 的全息声林",
+    "titleEn": "Mechanical Photosynthesis: TITAN's Holographic Sound Forest",
     "year": "2025",
-    "category": "Virtura / 空间影像",
-    "type": "Live performance / audiovisual collaboration",
-    "role": "Spatial visuals / atmosphere",
-    "clientOrContext": "Virtura Collective",
-    "oneLiner": "将视觉作为氛围、空间结构与观演关系的一部分。",
-    "description": "围绕程序化生成、音画联动、时间结构与空间生成展开，视觉语言聚焦雾气、光线、白空间深度与感知运动。",
+    "category": "Virtura / 现场视觉",
+    "type": "Live audiovisual collaboration",
+    "role": "Live visual production / spatial visual system",
+    "clientOrContext": "Ewan Qian / Virtura collaboration archive",
+    "oneLiner": "与 KASHIWA Daisuke、Yuki Murata 在 BO LIVE 前海店共同完成的现场视听合作。",
+    "description": "项目围绕《TITAN》的声音氛围、白空间纵深、雾气、全息纱幕、裸眼 3D 与音画互动结构展开。当前页面记录钱誉文 / Ewan Qian 的视觉系统、空间影像与现场视觉制作职责，不替代外部官方资料。",
     "keywords": [
-      "现场影像",
-      "观演关系",
-      "空间氛围"
+      "现场视觉",
+      "视听合作",
+      "全息纱幕"
     ],
     "cover": "/images/projects/covers/titan-holographic-sound-forest.webp",
     "gallery": [],
     "credits": [
       {
         "role": "Music / Performance",
-        "name": "KASHIWA Daisuke"
+        "name": "KASHIWA Daisuke 柏大辅"
       },
       {
         "role": "Music / Performance",
-        "name": "Yuki Murata"
+        "name": "Yuki Murata 村田有希"
       },
       {
-        "role": "Visual System",
+        "role": "Visual Artist",
         "name": "Ewan Qian 钱誉文"
+      },
+      {
+        "role": "Performance Coordination",
+        "name": "欧阳毅、雪山"
+      },
+      {
+        "role": "Curator / Exhibition Planning",
+        "name": "张秋童 Vickie"
+      },
+      {
+        "role": "Technical Director",
+        "name": "宽敬"
+      },
+      {
+        "role": "Lighting Designer",
+        "name": "王以玮"
+      },
+      {
+        "role": "Sound Engineer",
+        "name": "天赐"
+      },
+      {
+        "role": "Technical Support",
+        "name": "猪肉"
+      },
+      {
+        "role": "Stage Manager",
+        "name": "韩俊谦"
+      },
+      {
+        "role": "Artist Executive",
+        "name": "唐棣"
+      },
+      {
+        "role": "Media / Publicity",
+        "name": "绵绵"
+      },
+      {
+        "role": "Venue Operation",
+        "name": "浪险、丫丫、洋葱"
       }
     ],
     "visibility": "public",
     "featured": false,
-    "title_en": "TITAN with Ewan Qian",
+    "title_en": "Mechanical Photosynthesis: TITAN's Holographic Sound Forest",
     "media_type": "image",
-    "external_url": "",
+    "external_url": "https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g",
     "external_video_url": "",
     "public_status": "public-preview",
     "needs_clean_cover": false,
-    "categoryGroup": "XR / Vision Pro / Spatial Computing"
+    "categoryGroup": "Spatial Media & Live Visuals"
   },
   {
     "slug": "observation-and-symbiosis",
@@ -751,7 +791,7 @@
     "category": "Virtura / 空间影像",
     "type": "Exhibition project / data landscape",
     "role": "Digital nature / point-cloud structure",
-    "clientOrContext": "Virtura / XUAN context",
+    "clientOrContext": "Virtura context",
     "oneLiner": "在公共空间中呈现数字自然、点云结构与共生关系。",
     "description": "通过地理数据、动态粒子系统与公共空间影像，把数据结构转化为持续流淌的数字景观。",
     "keywords": [
@@ -768,7 +808,7 @@
     "credits": [
       {
         "role": "Creative Context",
-        "name": "VIRTURA / XUAN"
+        "name": "VIRTURA"
       },
       {
         "role": "Seen Publicly",
