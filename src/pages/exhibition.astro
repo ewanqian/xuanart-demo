@@ -9,7 +9,7 @@ import eventMedia from "../data/event-media.json";
 const featured = projects.filter((project) => project.featured).slice(0, 4);
 ---
 
-<Layout title="广州展会入口 | XUAN Spatial Perception">
+<Layout title="空间内容资料 | XUAN Spatial Perception">
   <section class="expo-hero">
     <div class="container expo-grid">
       <div>
@@ -18,7 +18,7 @@ const featured = projects.filter((project) => project.featured).slice(0, 4);
         <p class="lead">{site.exhibition.wallTextEn}</p>
       </div>
       <div class="qr-panel">
-        <span>WEB ENTRY</span>
+        <span>WEB</span>
         <p>xuanart.com</p>
       </div>
     </div>
@@ -33,7 +33,7 @@ const featured = projects.filter((project) => project.featured).slice(0, 4);
       </div>
       <div class="wall-copy">
         <p>XUAN / 轩空间感知从真实场所出发，整理地方文化、历史材料、品牌内容与数字媒介。</p>
-        <p>文旅空间、博物展陈、展览空间、品牌环境、实时预演与空间计算，共同构成这次展会的内容入口。</p>
+        <p>文旅空间、博物展陈、品牌环境、实时预演与空间计算，共同构成空间内容的项目线索。</p>
         <p>从城市到山野，从过去到未来，从数字到现实。</p>
       </div>
     </div>
@@ -41,7 +41,7 @@ const featured = projects.filter((project) => project.featured).slice(0, 4);
 
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Recommended Route</p>
+      <p class="eyebrow">Quick Reading</p>
       <ol class="route-list">
         {site.exhibition.route.map((item) => <li>{item}</li>)}
       </ol>
@@ -53,7 +53,7 @@ const featured = projects.filter((project) => project.featured).slice(0, 4);
       <div>
         <p class="eyebrow">Vision Pro / XR</p>
         <h2 class="section-title">头显端优先展示 360 / 全景 / 空间视频内容。</h2>
-        <p class="lead">以稳定播放、清晰观看和现场体验为优先，作为展会空间内容的延展入口。</p>
+        <p class="lead">以稳定播放、清晰观看和空间观看体验为优先，作为空间内容的延展样本。</p>
       </div>
       <div class="experience-list">
         {xrExperiences.map((item) => (
@@ -80,7 +80,7 @@ const featured = projects.filter((project) => project.featured).slice(0, 4);
             <span>{item.use}</span>
             <h3>{item.title}</h3>
             <p>{item.duration} / {item.format} / {item.status}</p>
-            <small>现场循环媒体 / 轻量页面入口</small>
+            <small>循环媒体 / 品牌氛围播放</small>
           </article>
         ))}
       </div>
@@ -89,7 +89,7 @@ const featured = projects.filter((project) => project.featured).slice(0, 4);
 
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Fast Portfolio Entry</p>
+      <p class="eyebrow">Selected Works</p>
       <div class="project-grid">
         {featured.map((project) => <ProjectCard project={project} compact />)}
       </div>

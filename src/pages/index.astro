@@ -46,10 +46,6 @@ const heroSlides = [
           <a class="button secondary" href="/about">About / 关于我们</a>
         </div>
       </div>
-      <a class="expo-link" href="/exhibition">
-        <span>Guangzhou Exhibition</span>
-        <strong>现场扫码入口</strong>
-      </a>
     </div>
   </section>
 
@@ -57,7 +53,7 @@ const heroSlides = [
     <div class="container two-col">
       <div>
         <p class="eyebrow">Positioning</p>
-        <h2 class="section-title">{site.brand.taglineEn}</h2>
+        <h2 class="section-title">从真实场所出发</h2>
       </div>
       <div>
         <p class="lead">{site.brand.intro}</p>
@@ -118,7 +114,7 @@ const heroSlides = [
       <div class="section-head">
         <div>
           <p class="eyebrow">Guangzhou Edition Gift</p>
-          <h2 class="section-title">展会 4K 壁纸</h2>
+          <h2 class="section-title">4K 主视觉壁纸</h2>
         </div>
         <a class="button secondary" href="/downloads">下载壁纸</a>
       </div>
@@ -129,23 +125,6 @@ const heroSlides = [
             <span>{wallpaper.titleCn}</span>
           </a>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section final-cta">
-    <div class="container two-col">
-      <div>
-        <p class="eyebrow">Exhibition</p>
-        <h2 class="section-title">{site.exhibition.wallText}</h2>
-        <p class="lead">{site.exhibition.wallTextEn}</p>
-      </div>
-      <div class="thin-card">
-        <p>{site.exhibition.summary}</p>
-        <div class="button-row">
-          <a class="button" href="/contact">预约项目沟通</a>
-          <a class="button secondary" href="/exhibition">现场页面</a>
-        </div>
       </div>
     </div>
   </section>
@@ -172,7 +151,7 @@ const heroSlides = [
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: minmax(0, 0.72fr) minmax(220px, 0.28fr);
+    grid-template-columns: minmax(0, 0.72fr);
     gap: 36px;
     align-items: end;
   }
@@ -239,28 +218,6 @@ const heroSlides = [
     color: var(--ink);
     font-size: clamp(18px, 2.1vw, 28px);
     line-height: 1.32;
-  }
-
-  .expo-link {
-    display: grid;
-    gap: 8px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 18px;
-    background: rgba(255, 255, 255, 0.64);
-    backdrop-filter: blur(14px);
-  }
-
-  .expo-link span {
-    color: var(--blue);
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-
-  .expo-link strong {
-    font-size: 20px;
-    line-height: 1.35;
-    font-weight: 560;
   }
 
   .direction-grid,

@@ -1,13 +1,13 @@
 [
   {
-    "title": "Vision Pro Exhibition Preview",
-    "type": "exhibition viewing",
+    "title": "Vision Pro Spatial Preview",
+    "type": "spatial viewing",
     "duration": "",
     "device": "Apple Vision Pro",
-    "status": "exhibition viewing",
+    "status": "spatial viewing",
     "visibility": "public",
     "source": "",
-    "summary": "展会头显体验入口。优先稳定展示 360 / 全景 / 空间视频内容，不做普通官网菜单。"
+    "summary": "头显端优先稳定展示 360 / 全景 / 空间视频内容，不做普通官网菜单。"
   },
   {
     "title": "Drop Flow Spatial Media",

@@ -1,5 +1,4 @@
 ---
-import site from "../data/site.json";
 import links from "../data/links.json";
 
 const website = links.find((item) => item.id === "website");
@@ -9,12 +8,11 @@ const email = links.find((item) => item.id === "email");
 <footer class="footer">
   <div class="container footer-grid">
     <div>
-      <p class="eyebrow">XUAN Spatial Perception</p>
-      <h2>让空间重新被感受到</h2>
+      <p class="eyebrow">Contact</p>
+      <h2>项目合作</h2>
     </div>
     <div class="meta">
-      <p>{site.brand.tagline}</p>
-      <p>{site.brand.taglineEn}</p>
+      <p>空间内容、展陈项目与品牌环境沟通。</p>
       {website && <p>Website: <a href={website.href}>{website.value}</a></p>}
       {email?.value && <p>Email: <a href={email.href}>{email.value}</a></p>}
     </div>
