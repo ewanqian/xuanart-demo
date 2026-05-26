@@ -1,26 +1,42 @@
 [
   {
+    "id": "shipinhao",
+    "label": "关注最新项目 / Follow Our Work",
+    "value": "视频号「沈轩的树洞」",
+    "href": "",
+    "type": "text",
+    "qr": null
+  },
+  {
+    "id": "email",
+    "label": "商务合作 / Business Inquiries",
+    "value": "178367978@qq.com",
+    "href": "mailto:178367978@qq.com",
+    "type": "email",
+    "qr": null
+  },
+  {
+    "id": "address",
+    "label": "地址 / Address",
+    "value": "上海市黄浦区丽园路501号 SOHO丽园 A9-201",
+    "href": "",
+    "type": "text",
+    "qr": null
+  },
+  {
     "id": "website",
     "label": "官网 / Website",
     "value": "xuanart.com",
-    "href": "http://xuanart.com/",
+    "href": "https://xuanart.com/",
     "type": "link",
     "qr": null
   },
   {
     "id": "wechat",
     "label": "微信公众号 / WeChat Official Account",
-    "value": "",
+    "value": "微信搜索 virtura",
     "href": "",
-    "type": "qr",
-    "qr": null
-  },
-  {
-    "id": "xiaohongshu",
-    "label": "小红书 / RED",
-    "value": "",
-    "href": "",
-    "type": "link",
+    "type": "text",
     "qr": null
   },
   {
@@ -28,16 +44,16 @@
     "label": "抖音 / Douyin",
     "value": "",
     "href": "",
-    "type": "link",
-    "qr": null
+    "type": "qr",
+    "qr": "/images/qr/douyin-qr.png"
   },
   {
-    "id": "email",
-    "label": "邮箱 / Email",
+    "id": "xiaohongshu",
+    "label": "小红书 / Rednote",
     "value": "",
     "href": "",
-    "type": "email",
-    "qr": null
+    "type": "qr",
+    "qr": "/images/qr/xiaohongshu-qr.jpg"
   },
   {
     "id": "phone",
@@ -45,14 +61,6 @@
     "value": "",
     "href": "",
     "type": "phone",
-    "qr": null
-  },
-  {
-    "id": "address",
-    "label": "地址 / Address",
-    "value": "Shanghai / Guangzhou / Remote",
-    "href": "",
-    "type": "text",
     "qr": null
   }
 ]

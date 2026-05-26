@@ -80,7 +80,7 @@ const socialQr = links.filter((item) => item.qr);
 
   .contact-row {
     display: grid;
-    grid-template-columns: 140px 1fr;
+    grid-template-columns: minmax(150px, 0.38fr) 1fr;
     gap: 18px;
     padding: 18px;
     border-bottom: 1px solid var(--line);
@@ -112,7 +112,7 @@ const socialQr = links.filter((item) => item.qr);
 
   .qr-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 14px;
   }
 
@@ -124,8 +124,11 @@ const socialQr = links.filter((item) => item.qr);
   }
 
   .qr-card img {
+    display: block;
     width: 100%;
     aspect-ratio: 1;
+    object-fit: contain;
+    background: #fff;
     border: 1px solid var(--line);
     border-radius: 8px;
   }
