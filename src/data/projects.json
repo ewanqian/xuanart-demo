@@ -72,7 +72,20 @@
     "external_video_url": "",
     "public_status": "published",
     "needs_clean_cover": false,
-    "categoryGroup": "Museum & Heritage Futures"
+    "categoryGroup": "Museum & Heritage Futures",
+    "mediaPreview": {
+      "label": "现场影像",
+      "status": "available",
+      "sourceNote": "广州媒体素材归档",
+      "proxyClips": [
+        "clips/敦煌星空展-无标版__01.mp4",
+        "clips/敦煌星空展-无标版__04.mp4"
+      ],
+      "posterCandidates": [
+        "thumbs/敦煌星空展-无标版__01.mp4.png",
+        "thumbs/敦煌星空展-无标版__04.mp4.png"
+      ]
+    }
   },
   {
     "slug": "chengdu-twin-towers-light-show",
@@ -148,7 +161,20 @@
     "external_video_url": "",
     "public_status": "published",
     "needs_clean_cover": false,
-    "categoryGroup": "Museum & Heritage Futures"
+    "categoryGroup": "Museum & Heritage Futures",
+    "mediaPreview": {
+      "label": "现场影像",
+      "status": "available",
+      "sourceNote": "广州媒体素材归档",
+      "proxyClips": [
+        "clips/保利天峯售楼处__01.mp4",
+        "clips/保利天峯售楼处__03.mp4"
+      ],
+      "posterCandidates": [
+        "thumbs/保利天峯售楼处__01.mp4.png",
+        "thumbs/保利天峯售楼处__03.mp4.png"
+      ]
+    }
   },
   {
     "slug": "china-national-geographic-magzone",
@@ -186,7 +212,20 @@
     "external_video_url": "",
     "public_status": "published",
     "needs_clean_cover": false,
-    "categoryGroup": "Museum & Heritage Futures"
+    "categoryGroup": "Museum & Heritage Futures",
+    "mediaPreview": {
+      "label": "现场影像",
+      "status": "available",
+      "sourceNote": "广州媒体素材归档",
+      "proxyClips": [
+        "clips/magzone设计师剪辑版__02.mp4",
+        "clips/magzone设计师剪辑版__04.mp4"
+      ],
+      "posterCandidates": [
+        "thumbs/magzone设计师剪辑版__02.mp4.png",
+        "thumbs/magzone设计师剪辑版__04.mp4.png"
+      ]
+    }
   },
   {
     "slug": "mount-taishan-immersive-light-space",
@@ -262,7 +301,20 @@
     "external_video_url": "",
     "public_status": "published",
     "needs_clean_cover": false,
-    "categoryGroup": "Brand & Commercial Environments"
+    "categoryGroup": "Brand & Commercial Environments",
+    "mediaPreview": {
+      "label": "现场影像",
+      "status": "available",
+      "sourceNote": "广州媒体素材归档",
+      "proxyClips": [
+        "clips/宝马宣传片预演-20230315-字幕版__01.mp4",
+        "clips/宝马宣传片预演-20230315-字幕版__04.mp4"
+      ],
+      "posterCandidates": [
+        "thumbs/宝马宣传片预演-20230315-字幕版__01.mp4.png",
+        "thumbs/宝马宣传片预演-20230315-字幕版__04.mp4.png"
+      ]
+    }
   },
   {
     "slug": "alibaba-data-experience-center",
@@ -413,7 +465,20 @@
     "external_video_url": "",
     "public_status": "published",
     "needs_clean_cover": false,
-    "categoryGroup": "Brand & Commercial Environments"
+    "categoryGroup": "Brand & Commercial Environments",
+    "mediaPreview": {
+      "label": "现场影像",
+      "status": "available",
+      "sourceNote": "广州媒体素材归档",
+      "proxyClips": [
+        "clips/五芳斋搭建-0719__02.mp4",
+        "clips/五芳斋搭建-0719__01.mp4"
+      ],
+      "posterCandidates": [
+        "thumbs/五芳斋搭建-0719__02.mp4.png",
+        "thumbs/五芳斋搭建-0719__01.mp4.png"
+      ]
+    }
   },
   {
     "slug": "zhenru-phantasmagoria",
@@ -451,7 +516,20 @@
     "external_video_url": "",
     "public_status": "published",
     "needs_clean_cover": false,
-    "categoryGroup": "Cultural & Local Spaces"
+    "categoryGroup": "Cultural & Local Spaces",
+    "mediaPreview": {
+      "label": "现场影像",
+      "status": "available",
+      "sourceNote": "广州媒体素材归档",
+      "proxyClips": [
+        "clips/20230314-真如境-final-微信版无标__01.mp4",
+        "clips/20230314-真如境-final-微信版无标__03.mp4"
+      ],
+      "posterCandidates": [
+        "thumbs/20230314-真如境-final-微信版无标__01.mp4.png",
+        "thumbs/20230314-真如境-final-微信版无标__03.mp4.png"
+      ]
+    }
   },
   {
     "slug": "shiseido-night-of-crowns",

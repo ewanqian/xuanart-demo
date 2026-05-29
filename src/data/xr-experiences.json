@@ -17,7 +17,7 @@
     "status": "spatial media selection",
     "visibility": "public",
     "source": "",
-    "summary": "可作为空间影像与实时音画方向的头显内容候选。"
+    "summary": "空间影像与实时音画方向的头显内容样本。"
   },
   {
     "title": "TIMER Spatial Visual",
@@ -27,6 +27,6 @@
     "status": "spatial media selection",
     "visibility": "public",
     "source": "",
-    "summary": "可作为时间结构、频段与图像内部结构方向的头显内容候选。"
+    "summary": "时间结构、频段与图像内部结构方向的头显内容样本。"
   }
 ]

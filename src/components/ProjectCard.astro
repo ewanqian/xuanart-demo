@@ -2,6 +2,12 @@
 const { project, compact = false } = Astro.props;
 const displayYear = project.year || null;
 const mediaLabel = project.media_type === "external" ? "External Media" : "Project Images";
+const mediaPreview = project.mediaPreview;
+const hasMediaPreview = mediaPreview?.status === "available";
+const mediaPreviewLabel = hasMediaPreview ? mediaPreview.label?.trim() || "Motion Archive" : null;
+const mediaPreviewSearch = hasMediaPreview
+  ? [mediaPreviewLabel, mediaPreview.sourceNote, "现场影像", "Motion Archive"]
+  : [];
 
 const searchText = [
   project.title,
@@ -15,6 +21,7 @@ const searchText = [
   project.oneLiner,
   project.media_type,
   project.visibility,
+  ...mediaPreviewSearch,
   ...(project.keywords ?? []),
   ...(project.credits ?? []).map((credit) => `${credit.role} ${credit.name}`),
 ]
@@ -38,6 +45,7 @@ const searchText = [
     <p>{project.oneLiner}</p>
     <div class="media-row">
       <span>{mediaLabel}</span>
+      {mediaPreviewLabel && <span class="preview-badge">{mediaPreviewLabel}</span>}
       <span>{project.role}</span>
     </div>
     <div class="tag-list">
@@ -130,6 +138,12 @@ const searchText = [
     padding: 5px 8px;
     color: var(--blue);
     font-size: 11px;
+  }
+
+  .media-row .preview-badge {
+    border-color: rgba(80, 108, 143, 0.24);
+    background: rgba(245, 228, 176, 0.34);
+    color: var(--ink);
   }
 
   .tag-list {

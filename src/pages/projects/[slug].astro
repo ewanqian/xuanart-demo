@@ -12,6 +12,11 @@ export function getStaticPaths() {
 const { project } = Astro.props;
 const gallery = project.gallery ?? [];
 const credits = project.credits ?? [];
+const mediaPreview = project.mediaPreview;
+const hasMediaPreview = mediaPreview?.status === "available";
+const mediaPreviewLabel = hasMediaPreview ? mediaPreview.label?.trim() || "Motion Archive" : null;
+const mediaPreviewSourceNote = hasMediaPreview ? mediaPreview.sourceNote?.trim() : null;
+const mediaPreviewClipCount = hasMediaPreview ? (mediaPreview.proxyClips ?? []).slice(0, 2).length : 0;
 const displayYear = project.year || null;
 const mediaLabel = project.media_type === "external" ? "External Media" : "Project Images";
 const detailRows = [
@@ -64,6 +69,23 @@ const pageDescription = project.slug === "titan-holographic-sound-forest"
           <div class="tag-list">
             {project.keywords.map((tag) => <span class="tag">{tag}</span>)}
           </div>
+          {hasMediaPreview && (
+            <aside class="thin-card motion-archive" aria-labelledby="motion-archive-title">
+              <div class="motion-archive-header">
+                <p class="eyebrow" id="motion-archive-title">现场影像 / Motion Archive</p>
+                {mediaPreviewLabel && <span class="tag">{mediaPreviewLabel}</span>}
+              </div>
+              {mediaPreviewSourceNote && <p class="archive-note">{mediaPreviewSourceNote}</p>}
+              {mediaPreviewClipCount > 0 && (
+                <ul class="archive-clips">
+                  <li>
+                    <span>归档片段</span>
+                    已整理 {mediaPreviewClipCount} 条现场短片
+                  </li>
+                </ul>
+              )}
+            </aside>
+          )}
           {(project.external_video_url || project.external_url) && (
             <div class="media-link">
               <p class="eyebrow">External Media</p>
@@ -179,6 +201,58 @@ const pageDescription = project.slug === "titan-holographic-sound-forest"
 
   .media-link {
     margin-top: 28px;
+  }
+
+  .motion-archive {
+    margin-top: 28px;
+    padding: 18px;
+  }
+
+  .motion-archive-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .motion-archive .eyebrow {
+    margin: 0;
+  }
+
+  .motion-archive .tag {
+    background: rgba(245, 228, 176, 0.34);
+    color: var(--blue);
+  }
+
+  .archive-note {
+    margin: 14px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .archive-clips {
+    display: grid;
+    gap: 8px;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .archive-clips li {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 12px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+
+  .archive-clips span {
+    color: var(--blue);
+    font-size: 12px;
   }
 
   .credit-list dl {

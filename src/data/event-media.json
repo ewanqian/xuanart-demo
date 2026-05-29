@@ -1,22 +1,82 @@
 [
   {
     "title": "XUAN Brand Atmosphere Loop",
-    "use": "LED loop / brand atmosphere",
+    "use": "LED loop / brand atmosphere only",
     "duration": "1-2 min loop",
     "format": "MP4",
     "resolution": "screen-adaptive",
     "status": "brand atmosphere",
-    "source": "",
-    "public": false
+    "source": "5月25日品牌 loop",
+    "public": false,
+    "items": [
+      {
+        "name": "XUAN Spatial Perception",
+        "materialCue": "品牌氛围循环影像，用于现场 LED 环境与开场氛围。"
+      }
+    ]
   },
   {
-    "title": "Project Case Reel",
-    "use": "LED loop / project montage",
-    "duration": "project montage",
+    "title": "Tzone Project Case Reel",
+    "use": "LED loop / Tzone project cases",
+    "duration": "project case montage",
     "format": "MP4",
     "resolution": "screen-adaptive",
-    "status": "selected works",
-    "source": "",
-    "public": false
+    "status": "Tzone project reel",
+    "source": "Tzone 项目线现场素材索引",
+    "public": false,
+    "items": [
+      {
+        "name": "时代广场大屏",
+        "materialCue": "城市公共屏影像，呈现远观尺度与公共空间画面。"
+      },
+      {
+        "name": "五芳斋旗舰店灯光幕墙",
+        "materialCue": "品牌旗舰店光影界面，呈现幕墙动态与街区尺度。"
+      },
+      {
+        "name": "上海天文馆敦煌星空主题展",
+        "materialCue": "博物馆展陈影像，呈现敦煌材料、星空叙事与展厅路径。"
+      },
+      {
+        "name": "宝马数字工厂元宇宙平台",
+        "materialCue": "实时预演影像，呈现工厂空间、流程与未来运营状态。"
+      },
+      {
+        "name": "中国国家地理 Magzone 主题空间",
+        "materialCue": "自然探索主题空间影像，呈现地理、自然与可进入的空间叙事。"
+      },
+      {
+        "name": "真如境",
+        "materialCue": "文旅展陈影像，呈现色彩、尺度与沉浸式观看场。"
+      }
+    ]
+  },
+  {
+    "title": "VIRTURA Spatial Media Reel",
+    "use": "LED loop / VIRTURA spatial media",
+    "duration": "spatial media montage",
+    "format": "MP4",
+    "resolution": "screen-adaptive",
+    "status": "VIRTURA media reel",
+    "source": "VIRTURA 空间媒体作品素材索引",
+    "public": false,
+    "items": [
+      {
+        "name": "Drop Flow",
+        "materialCue": "空间媒体影像，呈现声音、点云与数字自然的流动关系。"
+      },
+      {
+        "name": "PLAY_MODE",
+        "materialCue": "现场视觉影像，呈现游戏引擎、环屏与实时空间画面。"
+      },
+      {
+        "name": "FANG",
+        "materialCue": "四联屏空间影像，呈现多屏结构与空间化观看方式。"
+      },
+      {
+        "name": "Control Club",
+        "materialCue": "沉浸影像作品，呈现算法控制、身体感知与现场视觉系统。"
+      }
+    ]
   }
 ]
