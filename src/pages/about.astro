@@ -24,6 +24,8 @@ const brandLayers = [
     body: "Virtura 承载空间影像、实时系统、数字艺术、工具研发与创意网络，围绕 XR、Vision Pro、现场影像和空间计算建立可持续更新的内容方法。",
   },
 ];
+
+const publicMembers = members.filter((member) => !["Sihui Xu", "Murphy Nile"].includes(member.name));
 ---
 
 <Layout title="关于 | XUAN Spatial Perception">
@@ -68,7 +70,7 @@ const brandLayers = [
       </div>
     </div>
     <div class="container">
-      <TeamGrid members={members} />
+      <TeamGrid members={publicMembers} />
     </div>
   </section>
 </Layout>

@@ -1,128 +1,328 @@
 ---
 import Layout from "../components/Layout.astro";
-import ProjectCard from "../components/ProjectCard.astro";
 import site from "../data/site.json";
-import projects from "../data/projects.json";
-import wallpapers from "../data/wallpapers.json";
 
-const featured = projects.filter((project) => project.featured).slice(0, 6);
-const heroSlides = [
+const conceptSlides = [
   {
-    src: "/images/wallpapers/village-nature-field.webp",
-    alt: "XUAN Guangzhou visual direction: village and nature field",
+    id: "02_7265",
+    title: "火光与岩壁",
+    subtitle: "空间起源",
+    label: "看见火光 / 触摸石头",
+    narration: "人最早从火光、岩壁和脚下路径理解世界。空间，先被身体记住。",
+    top: "/media/xuan-concept/02_7265-top.webp",
+    bottom: "/media/xuan-concept/02_7265-bottom.webp",
   },
   {
-    src: "/images/wallpapers/past-future-museum-city.webp",
-    alt: "XUAN Guangzhou visual direction: past future museum city",
+    id: "01_7842",
+    title: "地形记忆",
+    subtitle: "地方被看见",
+    label: "看见地形 / 记住路径",
+    narration: "山、水、石、路径和停留点，共同形成地方记忆。人先看见地形，再理解场所。",
+    top: "/media/xuan-concept/01_7842-top.webp",
+    bottom: "/media/xuan-concept/01_7842-bottom.webp",
   },
   {
-    src: "/images/wallpapers/urban-glass-island.webp",
-    alt: "XUAN Guangzhou visual direction: urban glass island",
+    id: "08_8474",
+    title: "场所档案",
+    subtitle: "材料进入空间",
+    label: "场所线索 / 内容材料",
+    narration: "图像、器物、文献和地貌，被重新整理成可感知的线索。",
+    top: "/media/xuan-concept/08_8474-top.webp",
+    bottom: "/media/xuan-concept/08_8474-bottom.webp",
+  },
+  {
+    id: "05_8265",
+    title: "过去到未来",
+    subtitle: "档案显影",
+    label: "档案显影 / 未来路径",
+    narration: "档案被重新组织，历史材料由此进入新的观看路径。",
+    top: "/media/xuan-concept/05_8265-top.webp",
+    bottom: "/media/xuan-concept/05_8265-bottom.webp",
+  },
+  {
+    id: "04_5562",
+    title: "器物与城市",
+    subtitle: "文化转译",
+    label: "传统材料 / 城市界面",
+    narration: "传统材料进入城市界面，形成新的公共体验和空间秩序。",
+    top: "/media/xuan-concept/04_5562-top.webp",
+    bottom: "/media/xuan-concept/04_5562-bottom.webp",
+  },
+  {
+    id: "06_6399",
+    title: "城市到山野",
+    subtitle: "路径打开",
+    label: "城市公共生活 / 山野路径",
+    narration: "城市公共生活、地方自然和人的路径，在新的空间体验中重新连接。",
+    top: "/media/xuan-concept/06_6399-top.webp",
+    bottom: "/media/xuan-concept/06_6399-bottom.webp",
+  },
+  {
+    id: "10_2428",
+    title: "遗产到自然",
+    subtitle: "停留的现场",
+    label: "进入 / 停留 / 回望",
+    narration: "空间设计组织进入、停留、回望，让经验被带走。",
+    top: "/media/xuan-concept/10_2428-top.webp",
+    bottom: "/media/xuan-concept/10_2428-bottom.webp",
+  },
+  {
+    id: "09_9444",
+    title: "数字到现实",
+    subtitle: "空间被预演",
+    label: "数字预演 / 回到真实体验",
+    narration: "数字帮助预演路径、尺度、光影和人的感受，最终回到真实体验。",
+    top: "/media/xuan-concept/09_9444-top.webp",
+    bottom: "/media/xuan-concept/09_9444-bottom.webp",
+  },
+  {
+    id: "03_1307",
+    title: "视觉与路径",
+    subtitle: "感知房间",
+    label: "方向 / 节奏 / 注意力",
+    narration: "视觉组织方向、节奏和注意力，让人知道如何进入一个地方。",
+    top: "/media/xuan-concept/03_1307-top.webp",
+    bottom: "/media/xuan-concept/03_1307-bottom.webp",
+  },
+  {
+    id: "07_8846",
+    title: "被感知的空间",
+    subtitle: "方法收束",
+    label: "材料变路径 / 路径变体验",
+    narration: "看见、行走、认知、停留、记住。空间感知设计，把材料变成路径，把路径变成体验。",
+    top: "/media/xuan-concept/07_8846-top.webp",
+    bottom: "/media/xuan-concept/07_8846-bottom.webp",
   },
 ];
+
+const billboardSlides = [
+  {
+    title: "真如·幻境",
+    titleEn: "Zhenru Phantasmagoria",
+    cue: "幻境展开",
+    line: "色彩、尺度与动态影像组织的观看场。",
+    category: "文旅展陈",
+    video: "/media/xuan-loop/zhenru.mp4",
+    poster: "/media/xuan-loop/zhenru.png",
+    href: "/projects/zhenru-phantasmagoria",
+  },
+  {
+    title: "五芳斋旗舰店灯光幕墙",
+    titleEn: "Wufangzhai Light Facade",
+    cue: "老字号发光",
+    line: "可编程灯光幕墙连接街区、橱窗与品牌内容。",
+    category: "品牌空间",
+    video: "/media/xuan-loop/wufangzhai.mp4",
+    poster: "/media/xuan-loop/wufangzhai.png",
+    href: "/projects/wufangzhai-flagship-store-light-facade",
+  },
+  {
+    title: "上海天文馆敦煌星空主题展",
+    titleEn: "Dunhuang Starry Sky / Shanghai Planetarium",
+    cue: "星空显影",
+    line: "敦煌材料、星空叙事与博物馆路径共同构成主题展示。",
+    category: "博物馆展陈",
+    poster: "/images/projects/covers/dunhuang-starry-sky-planetarium.webp",
+    href: "/projects/dunhuang-starry-sky-planetarium",
+  },
+  {
+    title: "中国国家地理 Magzone 主题空间",
+    titleEn: "China National Geographic Magzone",
+    cue: "自然可进入",
+    line: "以地理、自然与探索叙事组织可进入的主题空间。",
+    category: "主题空间",
+    poster: "/images/projects/covers/china-national-geographic-magzone.webp",
+    href: "/projects/china-national-geographic-magzone",
+  },
+  {
+    title: "宝马数字工厂元宇宙平台",
+    titleEn: "BMW iFactory Metaverse Platform",
+    cue: "工厂被预演",
+    line: "以实时预演组织工厂空间、流程与未来运营状态。",
+    category: "企业空间",
+    poster: "/images/projects/covers/bmw-ifactory-metaverse.webp",
+    href: "/projects/bmw-ifactory-metaverse",
+  },
+  {
+    title: "世博保利天峯展厅",
+    titleEn: "Poly Tianfeng Showroom",
+    cue: "光影包裹动线",
+    line: "以光影包裹展厅动线，建立沉浸式品牌场景。",
+    category: "展厅体验",
+    poster: "/images/projects/covers/poly-tianfeng-showroom.webp",
+    href: "/projects/poly-tianfeng-showroom",
+  },
+  {
+    title: "东方明珠顶层球体改造",
+    titleEn: "Oriental Pearl Metaspace 2073",
+    cue: "城市地标更新",
+    line: "面向城市地标未来想象的空间内容系统。",
+    category: "城市地标",
+    poster: "/images/projects/covers/oriental-pearl-metaspace-2073.webp",
+    href: "/projects/oriental-pearl-metaspace-2073",
+  },
+  {
+    title: "成都双子塔塔身灯光秀",
+    titleEn: "Chengdu Twin Towers Light Show",
+    cue: "城市夜景事件",
+    line: "以城市天际线为媒介，组织可远观的公共光影事件。",
+    category: "城市尺度",
+    poster: "/images/projects/covers/chengdu-twin-towers-light-show.webp",
+    href: "/projects/chengdu-twin-towers-light-show",
+  },
+];
+
+const focusWorks = billboardSlides.slice(0, 5);
 ---
 
-<Layout>
-  <section class="hero hero-kv" aria-label="XUAN Spatial Perception brand key visual">
-    <div class="hero-slides" aria-hidden="true">
-      {heroSlides.map((slide, index) => (
-        <figure class="hero-slide" style={`--i:${index}`}>
-          <img src={slide.src} alt={slide.alt} loading={index === 0 ? "eager" : "lazy"} />
+<Layout title="XUAN Spatial Perception｜轩空间感知">
+  <section class="concept-guide" data-concept-guide aria-label="XUAN Spatial Perception concept guide">
+    <div class="concept-bg" aria-hidden="true"></div>
+    <div class="container concept-inner">
+      <div class="concept-copy">
+        <p class="eyebrow">XUAN Spatial Perception</p>
+        <h1>
+          <span>{site.brand.name}</span>
+          <span>让空间重新被感受到</span>
+        </h1>
+        <p class="concept-lead">空间为画布，光影即颜料。City to Nature / Past to Future / Digital to Real.</p>
+      </div>
+
+      <div class="concept-stage">
+        <div class="concept-screen" aria-hidden="true">
+          {conceptSlides.map((slide, index) => (
+            <figure class:list={["concept-slide", { "is-active": index === 0 }]} data-concept-slide data-index={index}>
+              <div class="concept-band top-band">
+                <img src={slide.top} alt="" loading={index < 2 ? "eager" : "lazy"} />
+              </div>
+              <div class="concept-band bottom-band">
+                <img src={slide.bottom} alt="" loading={index < 2 ? "eager" : "lazy"} />
+              </div>
+            </figure>
+          ))}
+        </div>
+
+        <div class="concept-marquee" aria-hidden="true">
+          <div>
+            <span>空间为画布，光影即颜料</span>
+            <span>从城市到山野</span>
+            <span>从过去到未来</span>
+            <span>从数字到现实</span>
+            <span>Let Space Be Felt Again</span>
+            <span>空间为画布，光影即颜料</span>
+            <span>从城市到山野</span>
+            <span>从过去到未来</span>
+            <span>从数字到现实</span>
+            <span>Let Space Be Felt Again</span>
+          </div>
+        </div>
+
+        <div class="concept-panel">
+          <div class="panel-head">
+            <span>曲面屏导览</span>
+            <span>TOP + BOTTOM</span>
+          </div>
+          <div class="concept-copy-stack" aria-live="polite">
+            {conceptSlides.map((slide, index) => (
+              <article class:list={["concept-item", { "is-active": index === 0 }]} data-concept-copy data-index={index}>
+                <p>{slide.subtitle}</p>
+                <h2>{slide.title}</h2>
+                <span>{slide.label}</span>
+                <small>{slide.narration}</small>
+              </article>
+            ))}
+          </div>
+          <div class="concept-progress" aria-hidden="true"><span></span></div>
+        </div>
+      </div>
+
+      <nav class="concept-wall" aria-label="Spatial perception concepts">
+        {conceptSlides.map((slide, index) => (
+          <button class:list={["concept-thumb", { "is-active": index === 0 }]} type="button" data-concept-cue data-index={index}>
+            <img src={slide.top} alt="" loading={index < 4 ? "eager" : "lazy"} />
+            <span>{slide.title}</span>
+          </button>
+        ))}
+      </nav>
+    </div>
+  </section>
+
+  <section class="billboard" data-billboard aria-label="XUAN project media billboard">
+    <div class="billboard-stage" aria-hidden="true">
+      {billboardSlides.map((slide, index) => (
+        <figure class:list={["billboard-slide", { "is-active": index === 0 }]} data-slide data-index={index}>
+          {slide.video ? (
+            <video
+              src={slide.video}
+              poster={slide.poster}
+              muted
+              loop
+              playsinline
+              preload={index < 2 ? "auto" : "metadata"}
+            />
+          ) : (
+            <img src={slide.poster} alt="" loading={index < 2 ? "eager" : "lazy"} />
+          )}
         </figure>
       ))}
     </div>
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <p class="eyebrow">XUAN Guangzhou Edition 2026</p>
-        <h1>
-          <span>{site.brand.nameEn}</span>
-          <span>{site.brand.name}</span>
-        </h1>
-        <p class="tagline">{site.brand.tagline}</p>
-        <p class="tagline-en">{site.brand.taglineEn}</p>
-        <p class="lead">{site.brand.positioning}</p>
-        <div class="button-row">
-          <a class="button" href="/projects">Works / 代表项目</a>
-          <a class="button secondary" href="/about">About / 关于我们</a>
+
+    <div class="billboard-wash" aria-hidden="true"></div>
+
+    <div class="container billboard-inner">
+      <div class="billboard-copy">
+        <p class="eyebrow">Tzone / 图域主线</p>
+        <h2>
+          <span>代表项目</span>
+          <span>文旅、展陈、品牌空间</span>
+        </h2>
+        <p class="billboard-line">以成熟项目呈现空间感知方法。</p>
+      </div>
+
+      <div class="billboard-panel">
+        <div class="panel-head">
+          <span>自动播放</span>
+          <span>PV LOOP</span>
         </div>
+        <div class="active-copy" aria-live="polite">
+          {billboardSlides.map((slide, index) => (
+            <article class:list={["active-item", { "is-active": index === 0 }]} data-copy data-index={index}>
+              <p>{slide.category}</p>
+              <h3>{slide.cue}</h3>
+              <span>{slide.title} / {slide.titleEn}</span>
+              <small>{slide.line}</small>
+            </article>
+          ))}
+        </div>
+        <div class="progress" aria-hidden="true"><span></span></div>
       </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container two-col">
-      <div>
-        <p class="eyebrow">Positioning</p>
-        <h2 class="section-title">从真实场所出发</h2>
-      </div>
-      <div>
-        <p class="lead">{site.brand.intro}</p>
-        <p class="meta">{site.brand.introEn}</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <p class="eyebrow">Three Directions</p>
-      <h2 class="section-title">从城市到山野，从过去到未来，从数字到现实。</h2>
-      <div class="direction-grid">
-        {site.directions.map((direction) => (
-          <a class="direction" href="/methodology">
-            <span>{direction.titleEn}</span>
-            <h3>{direction.title}</h3>
-            <p>{direction.body}</p>
-            <div class="tag-list">
-              {direction.keywords.slice(0, 3).map((tag) => <span class="tag">{tag}</span>)}
-            </div>
-          </a>
+      <nav class="cue-rail" aria-label="Loop scenes">
+        {billboardSlides.map((slide, index) => (
+          <button class:list={["cue-button", { "is-active": index === 0 }]} type="button" data-cue data-index={index}>
+            <img src={slide.poster} alt="" loading={index < 4 ? "eager" : "lazy"} />
+            <span>{slide.title}</span>
+          </button>
         ))}
-      </div>
+      </nav>
     </div>
   </section>
 
-  <section class="section method-strip">
-    <div class="container two-col">
-      <div>
-        <p class="eyebrow">Method</p>
-        <h2 class="section-title">{site.method.headline}</h2>
-        <p class="lead">{site.method.headlineEn}</p>
-      </div>
-      <ol class="method-list">
-        {site.method.steps.map((step) => <li>{step}</li>)}
-      </ol>
-    </div>
-  </section>
-
-  <section class="section">
+  <section class="project-strip" aria-label="Selected project entrances">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Selected Projects</p>
-          <h2 class="section-title">Works / 代表项目</h2>
-        </div>
-        <a class="button secondary" href="/projects">查看全部</a>
+      <div class="strip-head">
+        <p class="eyebrow">Selected Works</p>
+        <a class="button secondary" href="/projects">全部项目</a>
       </div>
-      <div class="project-grid">
-        {featured.map((project) => <ProjectCard project={project} />)}
-      </div>
-    </div>
-  </section>
-
-  <section class="section wallpaper-strip">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Guangzhou Edition Gift</p>
-          <h2 class="section-title">4K 主视觉壁纸</h2>
-        </div>
-        <a class="button secondary" href="/downloads">下载壁纸</a>
-      </div>
-      <div class="wallpaper-grid">
-        {wallpapers.map((wallpaper) => (
-          <a class="wallpaper" href="/downloads">
-            <img src={wallpaper.preview} alt={`${wallpaper.titleCn} wallpaper preview`} loading="lazy" />
-            <span>{wallpaper.titleCn}</span>
+      <div class="focus-grid">
+        {focusWorks.map((work) => (
+          <a class="focus-card" href={work.href}>
+            <img src={work.poster} alt={`${work.title} preview`} loading="lazy" />
+            <div>
+              <span>{work.category}</span>
+              <h2>{work.title}</h2>
+              <p>{work.cue}</p>
+            </div>
           </a>
         ))}
       </div>
@@ -130,225 +330,835 @@ const heroSlides = [
   </section>
 </Layout>
 
+<script>
+  const setupImageGuide = () => {
+    const root = document.querySelector("[data-concept-guide]");
+    if (!root) return;
+    const slides = Array.from(root.querySelectorAll("[data-concept-slide]"));
+    const copies = Array.from(root.querySelectorAll("[data-concept-copy]"));
+    const cues = Array.from(root.querySelectorAll("[data-concept-cue]"));
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let active = 0;
+    let timer = null;
+    const duration = 5600;
+    const centerCue = () => {
+      const cue = cues[active];
+      const rail = cue?.parentElement;
+      if (!(cue instanceof HTMLElement) || !(rail instanceof HTMLElement)) return;
+      const left = cue.offsetLeft - (rail.clientWidth - cue.clientWidth) / 2;
+      rail.scrollTo({ left, behavior: reduceMotion ? "auto" : "smooth" });
+    };
+
+    const setActive = (next) => {
+      active = (next + slides.length) % slides.length;
+      slides.forEach((slide, index) => {
+        const isActive = index === active;
+        slide.classList.toggle("is-active", isActive);
+        copies[index]?.classList.toggle("is-active", isActive);
+        cues[index]?.classList.toggle("is-active", isActive);
+      });
+      centerCue();
+    };
+
+    const start = () => {
+      if (reduceMotion || timer) return;
+      timer = window.setInterval(() => setActive(active + 1), duration);
+    };
+
+    cues.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (timer) {
+          window.clearInterval(timer);
+          timer = null;
+        }
+        setActive(Number(button.dataset.index || 0));
+        start();
+      });
+    });
+
+    setActive(0);
+    start();
+  };
+
+  const setupBillboard = () => {
+    const root = document.querySelector("[data-billboard]");
+    if (!root) return;
+    const slides = Array.from(root.querySelectorAll("[data-slide]"));
+    const copies = Array.from(root.querySelectorAll("[data-copy]"));
+    const cues = Array.from(root.querySelectorAll("[data-cue]"));
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let active = 0;
+    let timer = null;
+    const duration = 5200;
+
+    const setActive = (next) => {
+      active = (next + slides.length) % slides.length;
+      slides.forEach((slide, index) => {
+        const video = slide.querySelector("video");
+        const isActive = index === active;
+        slide.classList.toggle("is-active", isActive);
+        copies[index]?.classList.toggle("is-active", isActive);
+        cues[index]?.classList.toggle("is-active", isActive);
+        if (!video) return;
+        if (isActive && !reduceMotion) {
+          video.currentTime = Math.min(video.currentTime, 0.2);
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    };
+
+    const start = () => {
+      if (reduceMotion || timer) return;
+      timer = window.setInterval(() => setActive(active + 1), duration);
+    };
+
+    cues.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (timer) {
+          window.clearInterval(timer);
+          timer = null;
+        }
+        setActive(Number(button.dataset.index || 0));
+        start();
+      });
+    });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        if (timer) window.clearInterval(timer);
+        timer = null;
+        slides.forEach((slide) => slide.querySelector("video")?.pause());
+      } else {
+        setActive(active);
+        start();
+      }
+    });
+
+    setActive(0);
+    start();
+  };
+
+  setupImageGuide();
+  setupBillboard();
+</script>
+
 <style>
-  .hero {
+  .concept-guide {
     position: relative;
-    min-height: 82vh;
+    min-height: calc(100svh - 74px);
     overflow: hidden;
-    border-bottom: 1px solid var(--line);
+    background: #f4efe3;
+    color: var(--ink);
+    isolation: isolate;
   }
 
-  .hero-kv {
-    display: grid;
-    align-items: end;
-    padding: 112px 0 72px;
+  .concept-bg {
+    position: absolute;
+    inset: 0;
     background:
-      linear-gradient(90deg, rgba(251, 250, 245, 0.98) 0%, rgba(251, 250, 245, 0.88) 38%, rgba(251, 250, 245, 0.62) 100%),
-      var(--paper);
+      radial-gradient(circle at 16% 20%, rgba(255, 240, 105, 0.26), transparent 22rem),
+      radial-gradient(circle at 86% 18%, rgba(49, 95, 214, 0.13), transparent 24rem),
+      linear-gradient(90deg, rgba(49, 95, 214, 0.05) 1px, transparent 1px) 0 0 / 90px 90px,
+      linear-gradient(0deg, rgba(49, 95, 214, 0.035) 1px, transparent 1px) 0 0 / 90px 90px;
   }
 
-  .hero-inner {
+  .concept-inner {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 0.72fr);
-    gap: 36px;
+    min-height: calc(100svh - 74px);
+    grid-template-rows: auto 1fr auto;
+    gap: 22px;
+    padding: 42px 0 28px;
+  }
+
+  .concept-copy {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.75fr) minmax(280px, 0.55fr);
+    gap: 32px;
     align-items: end;
   }
 
-  .hero-slides {
-    position: absolute;
-    inset: 0;
+  .concept-copy .eyebrow,
+  .concept-copy h1 {
+    grid-column: 1;
   }
 
-  .hero-slide {
+  .concept-lead {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: end;
+  }
+
+  h1,
+  .billboard-copy h2 {
+    display: grid;
+    gap: 10px;
+    margin: 12px 0 0;
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 0.96;
+    font-weight: 580;
+  }
+
+  h1 span:last-child,
+  .billboard-copy h2 span:last-child {
+    color: var(--blue);
+    font-size: clamp(22px, 3vw, 42px);
+    line-height: 1.18;
+    font-weight: 520;
+  }
+
+  .concept-lead {
+    margin: 0;
+    max-width: 540px;
+    color: var(--muted);
+    font-size: clamp(16px, 1.7vw, 20px);
+    line-height: 1.8;
+  }
+
+  .concept-stage {
+    position: relative;
+    width: 100vw;
+    min-height: clamp(560px, 68vh, 860px);
+    margin-left: calc(50% - 50vw);
+  }
+
+  .concept-screen {
     position: absolute;
     inset: 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(38, 64, 104, 0.14);
+    border-bottom: 1px solid rgba(38, 64, 104, 0.14);
+    background: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 30px 100px rgba(81, 68, 41, 0.14);
+    transform: perspective(1400px) rotateX(0.8deg);
+  }
+
+  .concept-screen::before {
+    content: "";
+    position: absolute;
+    inset: 0 4%;
+    z-index: 2;
+    border-top: 1px solid rgba(255, 255, 255, 0.74);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.54);
+    border-radius: 50% / 9%;
+    opacity: 0.78;
+    pointer-events: none;
+  }
+
+  .concept-screen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(244, 239, 227, 0.9), rgba(244, 239, 227, 0.18) 28%, rgba(244, 239, 227, 0.16) 70%, rgba(244, 239, 227, 0.88)),
+      linear-gradient(0deg, rgba(244, 239, 227, 0.72), transparent 34%, rgba(244, 239, 227, 0.3));
+    pointer-events: none;
+  }
+
+  .concept-panel {
+    position: absolute;
+    right: max(24px, calc((100vw - var(--max)) / 2));
+    bottom: 58px;
+    width: min(360px, calc(100% - 48px));
+    z-index: 2;
+  }
+
+  .concept-marquee {
+    position: absolute;
+    top: 22px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .concept-marquee div {
+    display: flex;
+    width: max-content;
+    min-width: 200%;
+    gap: 34px;
+    animation: conceptTextDrift 30s linear infinite;
+  }
+
+  .concept-marquee span {
+    color: rgba(23, 29, 38, 0.74);
+    font-size: clamp(13px, 1.2vw, 17px);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  @keyframes conceptTextDrift {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .concept-slide {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
     margin: 0;
     opacity: 0;
-    animation: heroFade 18s infinite;
-    animation-delay: calc(var(--i) * 6s);
+    transform: scale(1.02);
+    transition:
+      opacity 780ms ease,
+      transform 1400ms cubic-bezier(0.18, 0.84, 0.22, 1);
   }
 
-  .hero-slide img {
+  .concept-slide.is-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .concept-band {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .concept-band::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.16), transparent 24%, transparent 76%, rgba(0, 0, 0, 0.2)),
+      linear-gradient(0deg, rgba(255, 255, 255, 0.08), transparent 34%, rgba(255, 255, 255, 0.08));
+    pointer-events: none;
+  }
+
+  .concept-band img {
+    width: 122%;
+    height: 100%;
+    object-fit: cover;
+    max-width: none;
+    transform: translateX(-14%);
+  }
+
+  .concept-slide.is-active .concept-band img {
+    animation: conceptPan 7.2s ease-in-out infinite alternate;
+  }
+
+  .bottom-band img {
+    animation-delay: 450ms;
+  }
+
+  @keyframes conceptPan {
+    from {
+      transform: translateX(-14%) scale(1.01);
+    }
+    to {
+      transform: translateX(-2%) scale(1.03);
+    }
+  }
+
+  .concept-panel,
+  .billboard-panel {
+    border: 1px solid rgba(38, 64, 104, 0.16);
+    border-radius: 22px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.58);
+    box-shadow: 0 24px 78px rgba(81, 68, 41, 0.12);
+    backdrop-filter: blur(24px);
+  }
+
+  .panel-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .concept-copy-stack {
+    position: relative;
+    min-height: 178px;
+  }
+
+  .active-copy {
+    position: relative;
+    min-height: 280px;
+  }
+
+  .concept-item,
+  .active-item {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 520ms ease,
+      transform 720ms cubic-bezier(0.18, 0.84, 0.22, 1);
+  }
+
+  .concept-item.is-active,
+  .active-item.is-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .concept-item p,
+  .concept-item span,
+  .concept-item small,
+  .active-item p,
+  .active-item span,
+  .active-item small {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .concept-item p,
+  .active-item p {
+    color: var(--blue);
+    font-size: 13px;
+  }
+
+  .concept-item h2,
+  .active-item h3 {
+    margin: 14px 0 10px;
+    font-size: clamp(32px, 4.4vw, 52px);
+    line-height: 1;
+    font-weight: 580;
+  }
+
+  .concept-item span,
+  .active-item span {
+    color: var(--ink);
+    font-size: 16px;
+  }
+
+  .concept-item small,
+  .active-item small {
+    margin-top: 18px;
+    max-width: 380px;
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .concept-progress,
+  .progress {
+    position: relative;
+    height: 2px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(49, 95, 214, 0.18);
+  }
+
+  .concept-progress span,
+  .progress span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--blue);
+    transform-origin: left;
+    animation: progressBar 5.6s linear infinite;
+  }
+
+  .progress span {
+    background: var(--yellow);
+    animation-duration: 5.2s;
+  }
+
+  @keyframes progressBar {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .concept-wall,
+  .cue-rail {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(150px, 1fr);
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 18px;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+  }
+
+  .concept-thumb,
+  .cue-button {
+    display: grid;
+    gap: 8px;
+    min-width: 0;
+    border: 1px solid rgba(38, 64, 104, 0.14);
+    border-radius: 14px;
+    padding: 7px;
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--muted);
+    cursor: pointer;
+    backdrop-filter: blur(16px);
+    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    scroll-snap-align: center;
+  }
+
+  .concept-thumb:hover,
+  .concept-thumb.is-active,
+  .cue-button:hover,
+  .cue-button.is-active {
+    transform: translateY(-3px);
+    border-color: rgba(49, 95, 214, 0.42);
+    background: rgba(255, 255, 255, 0.78);
+    color: var(--ink);
+  }
+
+  .concept-thumb img,
+  .cue-button img {
+    width: 100%;
+    aspect-ratio: 16 / 7.2;
+    border-radius: 9px;
+    object-fit: cover;
+  }
+
+  .concept-thumb span,
+  .cue-button span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .billboard {
+    position: relative;
+    min-height: calc(100svh - 74px);
+    overflow: hidden;
+    background: #101419;
+    color: var(--paper-bright);
+    isolation: isolate;
+  }
+
+  .billboard-stage,
+  .billboard-slide,
+  .billboard-slide video,
+  .billboard-slide img,
+  .billboard-wash {
+    position: absolute;
+    inset: 0;
+  }
+
+  .billboard-slide {
+    margin: 0;
+    opacity: 0;
+    transform: scale(1.035);
+    transition:
+      opacity 900ms ease,
+      transform 1800ms cubic-bezier(0.18, 0.84, 0.22, 1);
+  }
+
+  .billboard-slide.is-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .billboard-slide video,
+  .billboard-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-    filter: saturate(0.88) contrast(0.96);
+    filter: saturate(1.03) contrast(1.04);
   }
 
-  @keyframes heroFade {
-    0%,
-    100% {
-      opacity: 0;
+  .billboard-slide.is-active img {
+    animation: billboardStillPan 7.8s ease-in-out infinite alternate;
+  }
+
+  @keyframes billboardStillPan {
+    from {
+      transform: translateX(-1.5%) scale(1.04);
     }
-
-    8%,
-    32% {
-      opacity: 0.58;
+    to {
+      transform: translateX(1.5%) scale(1.08);
     }
   }
 
-  h1 {
-    display: grid;
-    gap: 14px;
-    margin: 10px 0 24px;
-    max-width: 820px;
-    font-size: clamp(42px, 5.4vw, 76px);
-    line-height: 1.02;
-    font-weight: 560;
+  .billboard-wash {
+    z-index: 1;
+    background:
+      linear-gradient(90deg, rgba(8, 10, 14, 0.72), rgba(8, 10, 14, 0.2) 46%, rgba(8, 10, 14, 0.76)),
+      linear-gradient(0deg, rgba(8, 10, 14, 0.84), rgba(8, 10, 14, 0.08) 44%, rgba(8, 10, 14, 0.45));
   }
 
-  h1 span:last-child {
-    color: var(--blue);
-    font-size: clamp(24px, 3vw, 42px);
-    line-height: 1.18;
-  }
-
-  .tagline {
-    margin: 0 0 8px;
-    color: var(--blue);
-    font-size: clamp(20px, 2.5vw, 32px);
-    line-height: 1.28;
-  }
-
-  .tagline-en {
-    margin: 0 0 22px;
-    color: var(--ink);
-    font-size: clamp(18px, 2.1vw, 28px);
-    line-height: 1.32;
-  }
-
-  .direction-grid,
-  .project-grid,
-  .wallpaper-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-    margin-top: 40px;
-  }
-
-  .wallpaper-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    margin-top: 28px;
-  }
-
-  .wallpaper {
+  .billboard-inner {
     position: relative;
-    display: block;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.6);
-  }
-
-  .wallpaper img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-  }
-
-  .wallpaper span {
-    display: block;
-    padding: 10px 12px;
-    color: var(--muted);
-    font-size: 12px;
-  }
-
-  .direction {
-    min-height: 360px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 24px;
-    background: rgba(255, 255, 255, 0.55);
-  }
-
-  .direction span {
-    color: var(--blue);
-    font-size: 12px;
-  }
-
-  .direction h3 {
-    margin: 42px 0 18px;
-    font-size: clamp(24px, 2.6vw, 34px);
-    line-height: 1.22;
-    font-weight: 560;
-  }
-
-  .direction p,
-  .thin-card p {
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.9;
-  }
-
-  .method-strip {
-    background: rgba(255, 255, 255, 0.38);
-  }
-
-  .method-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    counter-reset: method;
-  }
-
-  .method-list li {
-    counter-increment: method;
+    z-index: 2;
     display: grid;
-    grid-template-columns: 42px 1fr;
-    gap: 14px;
-    padding: 18px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 20px;
-    line-height: 1.35;
+    min-height: calc(100svh - 74px);
+    grid-template-columns: minmax(280px, 0.82fr) minmax(320px, 0.48fr);
+    grid-template-rows: 1fr auto;
+    gap: 28px;
+    align-items: end;
+    padding: 56px 0 34px;
   }
 
-  .method-list li::before {
-    content: counter(method, decimal-leading-zero);
-    color: var(--blue);
+  .billboard-copy {
+    align-self: center;
+    max-width: 760px;
+  }
+
+  .billboard-copy .eyebrow {
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .billboard-copy h2 span:first-child {
+    color: var(--paper-bright);
+  }
+
+  .billboard-copy h2 span:last-child {
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .billboard-line {
+    width: fit-content;
+    margin: 30px 0 0;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(18px);
+    font-size: clamp(15px, 1.5vw, 18px);
+  }
+
+  .billboard-panel {
+    min-height: 330px;
+    background: rgba(14, 18, 25, 0.48);
+    box-shadow: 0 24px 90px rgba(0, 0, 0, 0.28);
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  .billboard-panel .panel-head,
+  .billboard-panel .active-item p,
+  .billboard-panel .active-item span,
+  .billboard-panel .active-item small {
+    color: rgba(255, 255, 255, 0.68);
+  }
+
+  .billboard-panel .active-item p {
+    color: var(--yellow);
+  }
+
+  .billboard-panel .active-item h3 {
+    color: var(--paper-bright);
+  }
+
+  .billboard-panel .active-item span {
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .cue-rail {
+    grid-column: 1 / -1;
+    grid-auto-columns: minmax(124px, 1fr);
+  }
+
+  .cue-button {
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.09);
+    color: rgba(255, 255, 255, 0.74);
+  }
+
+  .cue-button:hover,
+  .cue-button.is-active {
+    border-color: rgba(255, 255, 255, 0.42);
+    background: rgba(255, 255, 255, 0.17);
+    color: var(--paper-bright);
+  }
+
+  .cue-button img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-strip {
+    padding: 42px 0 70px;
+    background: var(--paper);
+  }
+
+  .strip-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .focus-card {
+    position: relative;
+    min-height: 260px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #151a21;
+  }
+
+  .focus-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+    opacity: 0.88;
+    transition: transform 260ms ease, opacity 260ms ease;
+  }
+
+  .focus-card:hover img {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+
+  .focus-card div {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 16px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.72), transparent);
+    color: white;
+  }
+
+  .focus-card span {
+    color: rgba(255, 255, 255, 0.72);
     font-size: 12px;
   }
 
-  .section-head {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 24px;
+  .focus-card h2 {
+    margin: 8px 0 4px;
+    font-size: 22px;
+    line-height: 1.1;
   }
 
-  @media (max-width: 980px) {
-    .direction-grid,
-    .project-grid,
-    .wallpaper-grid {
+  .focus-card p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 13px;
+  }
+
+  @media (max-width: 1080px) {
+    .concept-copy,
+    .billboard-inner {
       grid-template-columns: 1fr;
     }
 
-    .hero {
+    .concept-copy .eyebrow,
+    .concept-copy h1,
+    .concept-lead {
+      grid-column: auto;
+      grid-row: auto;
+    }
+
+    .focus-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .concept-inner,
+    .billboard-inner {
       min-height: auto;
-      padding: 58px 0 64px;
+      padding: 36px 0 24px;
     }
 
-    .hero-inner {
-      grid-template-columns: 1fr;
-      gap: 28px;
+    h1,
+    .billboard-copy h2 {
+      font-size: clamp(40px, 16vw, 58px);
     }
 
-    .hero-kv {
-      background:
-        linear-gradient(180deg, rgba(251, 250, 245, 0.95) 0%, rgba(251, 250, 245, 0.82) 100%),
-        var(--paper);
-    }
-
+    .concept-copy,
+    .concept-lead,
     h1 {
-      font-size: clamp(38px, 12vw, 54px);
-      line-height: 1.04;
+      min-width: 0;
+      max-width: 100%;
+      overflow-wrap: anywhere;
     }
 
-    .section-head {
-      align-items: start;
-      flex-direction: column;
+    .concept-stage {
+      min-height: 520px;
+    }
+
+    .concept-slide {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .concept-band img {
+      width: 126%;
+      transform: translateX(-16%);
+    }
+
+    .concept-marquee {
+      top: 14px;
+    }
+
+    .concept-marquee div {
+      gap: 22px;
+      animation-duration: 24s;
+    }
+
+    .concept-panel {
+      left: 12px;
+      right: 12px;
+      top: 72px;
+      bottom: auto;
+      width: auto;
+    }
+
+    .concept-panel,
+    .billboard-panel {
+      min-height: 230px;
+    }
+
+    .project-strip {
+      padding-top: 28px;
+    }
+
+    .focus-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .concept-slide,
+    .active-item,
+    .concept-item,
+    .concept-thumb,
+    .cue-button,
+    .focus-card img {
+      transition: none;
+    }
+
+    .concept-slide.is-active .concept-band img {
+      animation: none;
+    }
+
+    .billboard-slide.is-active img {
+      animation: none;
+    }
+
+    .concept-progress span,
+    .progress span {
+      animation: none;
+      transform: scaleX(1);
+    }
+
+    .concept-marquee div {
+      animation: none;
     }
   }
 </style>

@@ -729,7 +729,7 @@
     "media_type": "image",
     "external_url": "",
     "external_video_url": "",
-    "public_status": "published",
+    "public_status": "hidden",
     "needs_clean_cover": false,
     "categoryGroup": "Spatial Media & Live Visuals"
   },
@@ -775,7 +775,7 @@
     "media_type": "image",
     "external_url": "",
     "external_video_url": "",
-    "public_status": "published",
+    "public_status": "hidden",
     "needs_clean_cover": false,
     "categoryGroup": "Spatial Media & Live Visuals"
   },
@@ -857,7 +857,7 @@
     "media_type": "image",
     "external_url": "https://mp.weixin.qq.com/s/yNjtixkMIF5zXrl03DyU1g",
     "external_video_url": "",
-    "public_status": "published",
+    "public_status": "hidden",
     "needs_clean_cover": false,
     "categoryGroup": "Spatial Media & Live Visuals"
   },
@@ -899,7 +899,7 @@
     "media_type": "image",
     "external_url": "",
     "external_video_url": "",
-    "public_status": "published",
+    "public_status": "hidden",
     "needs_clean_cover": false,
     "categoryGroup": "XR / Vision Pro / Spatial Computing"
   },
@@ -937,7 +937,7 @@
     "media_type": "image",
     "external_url": "",
     "external_video_url": "",
-    "public_status": "published",
+    "public_status": "hidden",
     "needs_clean_cover": false,
     "categoryGroup": "Spatial Media & Live Visuals"
   },
@@ -975,7 +975,7 @@
     "media_type": "image",
     "external_url": "",
     "external_video_url": "",
-    "public_status": "published",
+    "public_status": "hidden",
     "needs_clean_cover": false,
     "categoryGroup": "Spatial Media & Live Visuals"
   }

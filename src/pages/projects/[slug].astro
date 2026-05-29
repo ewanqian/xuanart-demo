@@ -3,10 +3,12 @@ import Layout from "../../components/Layout.astro";
 import projects from "../../data/projects.json";
 
 export function getStaticPaths() {
-  return projects.map((project) => ({
-    params: { slug: project.slug },
-    props: { project },
-  }));
+  return projects
+    .filter((project) => project.public_status === "published")
+    .map((project) => ({
+      params: { slug: project.slug },
+      props: { project },
+    }));
 }
 
 const { project } = Astro.props;

@@ -3,7 +3,8 @@ import Layout from "../components/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import projects from "../data/projects.json";
 
-const categories = [...new Set(projects.map((project) => project.categoryGroup ?? project.category))];
+const visibleProjects = projects.filter((project) => project.public_status === "published");
+const categories = [...new Set(visibleProjects.map((project) => project.categoryGroup ?? project.category))];
 ---
 
 <Layout title="Works | XUAN Spatial Perception">
@@ -11,11 +12,11 @@ const categories = [...new Set(projects.map((project) => project.categoryGroup ?
     <div class="container">
       <p class="eyebrow">Works</p>
       <h1>代表项目 / Selected Works</h1>
-      <p class="lead">以项目封面、短说明和清晰分类组织作品入口，集中呈现文旅展陈、品牌空间、实时影像与空间计算方向。</p>
+      <p class="lead">以项目封面、短说明和清晰分类组织作品入口，集中呈现图域主线下的文旅展陈、博物馆、品牌空间与城市公共光影项目。</p>
       <div class="search-panel">
         <label for="project-search">Search</label>
         <input id="project-search" type="search" placeholder="输入项目、品牌、作者或关键词" data-project-search />
-        <span data-project-count>{projects.length} entries</span>
+        <span data-project-count>{visibleProjects.length} entries</span>
       </div>
     </div>
   </section>
@@ -25,10 +26,10 @@ const categories = [...new Set(projects.map((project) => project.categoryGroup ?
       <div class="container">
         <div class="category-head">
           <p class="eyebrow">{category}</p>
-          <span>{projects.filter((project) => (project.categoryGroup ?? project.category) === category).length} entries</span>
+          <span>{visibleProjects.filter((project) => (project.categoryGroup ?? project.category) === category).length} entries</span>
         </div>
         <div class="project-grid">
-          {projects
+          {visibleProjects
             .filter((project) => (project.categoryGroup ?? project.category) === category)
             .map((project) => <ProjectCard project={project} compact />)}
         </div>

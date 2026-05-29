@@ -26,7 +26,7 @@ const nav = [
     gap: 20px;
     width: min(calc(100% - 32px), var(--max));
     margin: 0 auto;
-    padding: 16px 0;
+    padding: 10px 0;
     background: rgba(247, 247, 242, 0.82);
     backdrop-filter: blur(18px);
     border-bottom: 1px solid var(--line);
@@ -35,11 +35,11 @@ const nav = [
   .brand {
     display: inline-flex;
     align-items: center;
-    min-width: 214px;
+    min-width: 188px;
   }
 
   .brand img {
-    width: 208px;
+    width: 184px;
     height: auto;
   }
 
@@ -72,11 +72,17 @@ const nav = [
 
     nav {
       width: 100%;
-      justify-content: space-between;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    nav a {
+      padding: 8px 10px;
     }
 
     .brand img {
-      width: 170px;
+      width: 154px;
     }
   }
 </style>

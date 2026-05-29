@@ -3,10 +3,10 @@ import Layout from "../components/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import site from "../data/site.json";
 import projects from "../data/projects.json";
-import xrExperiences from "../data/xr-experiences.json";
 import eventMedia from "../data/event-media.json";
 
-const featured = projects.filter((project) => project.featured).slice(0, 4);
+const featured = projects.filter((project) => project.public_status === "published" && project.featured).slice(0, 4);
+const wallMedia = eventMedia.filter((item) => item.title !== "VIRTURA Spatial Media Reel");
 ---
 
 <Layout title="空间内容资料 | XUAN Spatial Perception">
@@ -33,7 +33,7 @@ const featured = projects.filter((project) => project.featured).slice(0, 4);
       </div>
       <div class="wall-copy">
         <p>XUAN / 轩空间感知从真实场所出发，整理地方文化、历史材料、品牌内容与数字媒介。</p>
-        <p>文旅空间、博物展陈、品牌环境、实时预演与空间计算，共同构成空间内容的项目线索。</p>
+        <p>文旅空间、博物展陈、品牌环境与城市公共光影，共同构成空间内容的项目线索。</p>
         <p>从城市到山野，从过去到未来，从数字到现实。</p>
       </div>
     </div>
@@ -51,31 +51,11 @@ const featured = projects.filter((project) => project.featured).slice(0, 4);
   <section class="section">
     <div class="container two-col">
       <div>
-        <p class="eyebrow">Vision Pro / XR</p>
-        <h2 class="section-title">头显端优先展示 360 / 全景 / 空间视频内容。</h2>
-        <p class="lead">以稳定播放、清晰观看和空间观看体验为优先，作为空间内容的延展样本。</p>
-      </div>
-      <div class="experience-list">
-        {xrExperiences.map((item) => (
-          <article>
-            <span>{item.type}</span>
-            <h3>{item.title}</h3>
-            <p>{item.summary}</p>
-            <small>{item.device} / {item.status}</small>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container two-col">
-      <div>
         <p class="eyebrow">LED Loop</p>
-        <h2 class="section-title">大屏作为循环媒体和品牌氛围播放。</h2>
+        <h2 class="section-title">大屏用于品牌氛围与图域项目案例循环播放。</h2>
       </div>
       <div class="experience-list">
-        {eventMedia.map((item) => (
+        {wallMedia.map((item) => (
           <article>
             <span>{item.use}</span>
             <h3>{item.title}</h3>
