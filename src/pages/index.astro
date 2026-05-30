@@ -106,40 +106,114 @@ const conceptWallWords = [
   "路径打开",
   "档案显影",
   "被感知的空间",
+  "现场影像",
+  "创作网络",
   "Let Space Be Felt Again",
   "Spatial Perception",
 ];
 
+const conceptImagePool = conceptSlides.flatMap((slide) => [
+  {
+    src: slide.top,
+    title: slide.title,
+    label: slide.label,
+  },
+  {
+    src: slide.bottom,
+    title: slide.title,
+    label: slide.subtitle,
+  },
+]);
+
+const projectMotionMedia = [
+  {
+    title: "真如·幻境",
+    label: "色彩 / 尺度 / 观看场",
+    motion: "/media/xuan-motion/zhenru-loop.avif",
+    poster: "/images/projects/gallery/zhenru-phantasmagoria-01.webp",
+  },
+  {
+    title: "五芳斋旗舰店灯光幕墙",
+    label: "街区 / 橱窗 / 品牌内容",
+    motion: "/media/xuan-motion/wufangzhai-loop.avif",
+    poster: "/images/projects/gallery/wufangzhai-flagship-store-light-facade-01.webp",
+  },
+  {
+    title: "上海天文馆敦煌星空主题展",
+    label: "敦煌材料 / 星空叙事",
+    motion: "/media/xuan-motion/dunhuang-loop.avif",
+    poster: "/images/projects/gallery/dunhuang-starry-sky-planetarium-01.webp",
+  },
+  {
+    title: "中国国家地理 Magzone 主题空间",
+    label: "自然 / 探索 / 主题空间",
+    motion: "/media/xuan-motion/magzone-loop.avif",
+    poster: "/images/projects/gallery/china-national-geographic-magzone-01.webp",
+  },
+  {
+    title: "世博保利天峯展厅",
+    label: "光影包裹动线",
+    motion: "/media/xuan-motion/poly-loop.avif",
+    poster: "/images/projects/gallery/poly-tianfeng-showroom-01.webp",
+  },
+  {
+    title: "宝马数字工厂元宇宙平台",
+    label: "实时预演 / 数字工厂",
+    motion: "/media/xuan-motion/bmw-loop.avif",
+    poster: "/images/projects/gallery/bmw-ifactory-metaverse-01.webp",
+  },
+];
+
 const buildConceptRow = (offset = 0) =>
-  Array.from({ length: 14 }, (_, index) => {
+  Array.from({ length: 10 }, (_, index) => {
     const slide = conceptSlides[(index + offset) % conceptSlides.length];
-    if (index % 4 === 1) {
+    const media = conceptImagePool[(index + offset) % conceptImagePool.length];
+    const nextMedia = conceptImagePool[(index + offset + 3) % conceptImagePool.length];
+    if (index % 3 === 1) {
       return {
         type: "word",
         text: conceptWallWords[(index + offset) % conceptWallWords.length],
         label: slide.subtitle,
+        bg: media.src,
       };
     }
-    if (index % 4 === 3) {
+    if (index % 3 === 2) {
       return {
         type: "phrase",
         text: slide.title,
         label: slide.label,
+        bg: nextMedia.src,
       };
     }
     return {
       type: "image",
-      src: index % 2 === 0 ? slide.top : slide.bottom,
-      title: slide.title,
-      label: slide.label,
+      src: media.src,
+      title: media.title,
+      label: media.label,
     };
   });
 
 const conceptWallRows = [
-  { duration: 52, delay: -4, reverse: false, tiles: buildConceptRow(0) },
-  { duration: 60, delay: -18, reverse: true, tiles: buildConceptRow(3) },
-  { duration: 56, delay: -10, reverse: false, tiles: buildConceptRow(6) },
-  { duration: 64, delay: -24, reverse: true, tiles: buildConceptRow(9) },
+  { duration: 156, delay: -8, reverse: false, tiles: buildConceptRow(0) },
+  { duration: 174, delay: -44, reverse: true, tiles: buildConceptRow(5) },
+  { duration: 164, delay: -25, reverse: false, tiles: buildConceptRow(10) },
+];
+
+const buildProjectRow = (offset = 0) =>
+  Array.from({ length: 8 }, (_, index) => {
+    const media = projectMotionMedia[(index + offset) % projectMotionMedia.length];
+    return {
+      type: "image",
+      src: media.poster,
+      motion: media.motion,
+      title: media.title,
+      label: media.label,
+    };
+  });
+
+const projectWallRows = [
+  { duration: 96, delay: -10, reverse: false, tiles: buildProjectRow(0) },
+  { duration: 112, delay: -38, reverse: true, tiles: buildProjectRow(3) },
 ];
 
 const billboardSlides = [
@@ -232,7 +306,10 @@ const focusWorks = billboardSlides.slice(0, 5);
           <span>{site.brand.name}</span>
           <span>让空间重新被感受到</span>
         </h1>
-        <p class="concept-lead">空间为画布，光影即颜料。City to Nature / Past to Future / Digital to Real.</p>
+        <p class="concept-lead">
+          <span>空间为画布，光影即颜料。</span>
+          <span>City to Nature / Past to Future / Digital to Real.</span>
+        </p>
       </div>
 
       <div class="concept-stage">
@@ -244,16 +321,23 @@ const focusWorks = billboardSlides.slice(0, 5);
             >
               <div class="mosaic-track">
                 {row.tiles.concat(row.tiles).map((tile, index) => (
-                  tile.type === "image" ? (
-                    <figure class="mosaic-tile image-tile">
-                      <img src={tile.src} alt="" loading={index < 8 ? "eager" : "lazy"} />
+	                  tile.type === "image" ? (
+	                    <figure class="mosaic-tile image-tile">
+	                      <picture>
+	                        {tile.motion ? <source srcset={tile.motion} type="image/avif" /> : null}
+	                        <img src={tile.src} alt="" loading={index < 8 ? "eager" : "lazy"} />
+	                      </picture>
                       <figcaption>
                         <span>{tile.title}</span>
                         <small>{tile.label}</small>
                       </figcaption>
                     </figure>
-                  ) : (
-                    <div class:list={["mosaic-tile", tile.type === "phrase" ? "phrase-tile" : "word-tile"]}>
+	                  ) : (
+	                    <div class:list={["mosaic-tile", tile.type === "phrase" ? "phrase-tile" : "word-tile"]}>
+	                      <picture class="tile-bg" aria-hidden="true">
+	                        {tile.motion ? <source srcset={tile.motion} type="image/avif" /> : null}
+	                        <img src={tile.bg} alt="" loading={index < 8 ? "eager" : "lazy"} />
+	                      </picture>
                       <span>{tile.text}</span>
                       <small>{tile.label}</small>
                     </div>
@@ -338,6 +422,27 @@ const focusWorks = billboardSlides.slice(0, 5);
       <div class="strip-head">
         <p class="eyebrow">Selected Works</p>
         <a class="button secondary" href="/projects">全部项目</a>
+      </div>
+      <div class="project-motion-wall" aria-label="Project motion wall">
+        {projectWallRows.map((row) => (
+          <div
+            class:list={["project-motion-row", { "is-reverse": row.reverse }]}
+            style={`--duration:${row.duration}s; --delay:${row.delay}s;`}
+          >
+            <div class="project-motion-track">
+              {row.tiles.concat(row.tiles).map((tile, index) => (
+                <a class="project-motion-tile" href="/projects">
+                  <picture>
+                    <source srcset={tile.motion} type="image/avif" />
+                    <img src={tile.src} alt="" loading={index < 6 ? "eager" : "lazy"} />
+                  </picture>
+                  <span>{tile.title}</span>
+                  <small>{tile.label}</small>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
       <div class="focus-grid">
         {focusWorks.map((work) => (
@@ -443,10 +548,9 @@ const focusWorks = billboardSlides.slice(0, 5);
     position: relative;
     z-index: 1;
     display: grid;
-    min-height: calc(100svh - 74px);
-    grid-template-rows: auto 1fr auto;
-    gap: 22px;
-    padding: 42px 0 28px;
+    grid-template-rows: auto auto;
+    gap: 24px;
+    padding: 34px 0 28px;
   }
 
   .concept-copy {
@@ -486,17 +590,21 @@ const focusWorks = billboardSlides.slice(0, 5);
   }
 
   .concept-lead {
+    display: grid;
+    gap: 4px;
     margin: 0;
     max-width: 540px;
     color: var(--muted);
     font-size: clamp(16px, 1.7vw, 20px);
     line-height: 1.8;
+    overflow-wrap: anywhere;
   }
 
   .concept-stage {
     position: relative;
     width: 100vw;
-    min-height: clamp(560px, 66vh, 760px);
+    height: clamp(760px, 76vh, 960px);
+    min-height: 760px;
     margin-left: calc(50% - 50vw);
     overflow: hidden;
     border-top: 1px solid rgba(38, 64, 104, 0.14);
@@ -510,9 +618,9 @@ const focusWorks = billboardSlides.slice(0, 5);
     position: absolute;
     inset: 0;
     display: grid;
-    grid-template-rows: repeat(4, minmax(0, 1fr));
-    gap: clamp(8px, 1vw, 14px);
-    padding: clamp(18px, 2.2vw, 34px) 0;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: clamp(6px, 0.75vw, 10px);
+    padding: clamp(8px, 1vw, 16px) 0;
     transform: perspective(1400px) rotateX(0.65deg);
   }
 
@@ -522,8 +630,8 @@ const focusWorks = billboardSlides.slice(0, 5);
     inset: 0;
     z-index: 2;
     background:
-      linear-gradient(90deg, rgba(244, 239, 227, 0.96), transparent 18%, transparent 78%, rgba(244, 239, 227, 0.94)),
-      linear-gradient(0deg, rgba(244, 239, 227, 0.64), transparent 28%, transparent 68%, rgba(244, 239, 227, 0.68));
+      linear-gradient(90deg, rgba(244, 239, 227, 0.78), transparent 10%, transparent 90%, rgba(244, 239, 227, 0.76)),
+      linear-gradient(0deg, rgba(244, 239, 227, 0.22), transparent 18%, transparent 82%, rgba(244, 239, 227, 0.22));
     pointer-events: none;
   }
 
@@ -536,8 +644,9 @@ const focusWorks = billboardSlides.slice(0, 5);
   .mosaic-track {
     display: flex;
     align-items: stretch;
+    height: 100%;
     width: max-content;
-    gap: clamp(8px, 1vw, 14px);
+    gap: clamp(6px, 0.75vw, 10px);
     animation: conceptWallDrift var(--duration) linear infinite;
     animation-delay: var(--delay);
     will-change: transform;
@@ -559,8 +668,9 @@ const focusWorks = billboardSlides.slice(0, 5);
   .mosaic-tile {
     position: relative;
     display: grid;
-    flex: 0 0 clamp(210px, 22vw, 360px);
-    min-height: clamp(108px, 13vh, 148px);
+    flex: 0 0 clamp(560px, 56vw, 1040px);
+    height: 100%;
+    min-height: 0;
     overflow: hidden;
     border: 1px solid rgba(38, 64, 104, 0.12);
     border-radius: 10px;
@@ -572,13 +682,29 @@ const focusWorks = billboardSlides.slice(0, 5);
     margin: 0;
   }
 
-  .image-tile img {
+  .image-tile picture,
+  .tile-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .image-tile img,
+  .tile-bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.74;
+  }
+
+  .image-tile img {
+    opacity: 0.82;
     filter: saturate(0.9) contrast(0.98);
     transform: scale(1.02);
+  }
+
+  .tile-bg {
+    opacity: 0.68;
+    filter: saturate(0.92) contrast(1.02);
   }
 
   .image-tile::after {
@@ -622,14 +748,40 @@ const focusWorks = billboardSlides.slice(0, 5);
   .phrase-tile {
     align-content: center;
     gap: 10px;
-    padding: 18px;
+    padding: clamp(18px, 2.6vw, 30px);
     color: var(--ink);
+  }
+
+  .word-tile::after,
+  .phrase-tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.26)),
+      linear-gradient(135deg, rgba(255, 240, 105, 0.14), rgba(234, 242, 255, 0.16));
+    pointer-events: none;
+  }
+
+  .word-tile span,
+  .word-tile small,
+  .phrase-tile span,
+  .phrase-tile small {
+    position: relative;
+    z-index: 2;
   }
 
   .word-tile {
     background:
       linear-gradient(135deg, rgba(255, 255, 255, 0.84), rgba(234, 242, 255, 0.54)),
       rgba(255, 255, 255, 0.66);
+  }
+
+  .word-tile span,
+  .phrase-tile span {
+    max-width: 12em;
+    font-size: clamp(22px, 2.4vw, 38px);
   }
 
   .phrase-tile {
@@ -975,6 +1127,98 @@ const focusWorks = billboardSlides.slice(0, 5);
     gap: 16px;
   }
 
+  .project-motion-wall {
+    display: grid;
+    width: 100vw;
+    gap: 10px;
+    margin: 26px 0 30px calc(50% - 50vw);
+    overflow: hidden;
+    border-top: 1px solid rgba(38, 64, 104, 0.12);
+    border-bottom: 1px solid rgba(38, 64, 104, 0.12);
+    padding: 16px 0;
+    background:
+      linear-gradient(90deg, rgba(244, 239, 227, 0.92), transparent 18%, transparent 82%, rgba(244, 239, 227, 0.92)),
+      rgba(255, 255, 255, 0.42);
+  }
+
+  .project-motion-row {
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  .project-motion-track {
+    display: flex;
+    width: max-content;
+    gap: 10px;
+    animation: conceptWallDrift var(--duration) linear infinite;
+    animation-delay: var(--delay);
+    will-change: transform;
+  }
+
+  .project-motion-row.is-reverse .project-motion-track {
+    animation-direction: reverse;
+  }
+
+  .project-motion-tile {
+    position: relative;
+    flex: 0 0 clamp(260px, 27vw, 470px);
+    min-height: clamp(116px, 13vw, 176px);
+    overflow: hidden;
+    border: 1px solid rgba(38, 64, 104, 0.12);
+    border-radius: 10px;
+    background: #11161c;
+    color: white;
+    box-shadow: 0 14px 42px rgba(81, 68, 41, 0.1);
+  }
+
+  .project-motion-tile picture,
+  .project-motion-tile img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .project-motion-tile img {
+    object-fit: cover;
+    opacity: 0.86;
+    filter: saturate(0.96) contrast(1.02);
+  }
+
+  .project-motion-tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.18), transparent 46%),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.52), transparent 48%);
+    pointer-events: none;
+  }
+
+  .project-motion-tile span,
+  .project-motion-tile small {
+    position: absolute;
+    z-index: 1;
+    left: 14px;
+    right: 14px;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .project-motion-tile span {
+    bottom: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: clamp(16px, 1.5vw, 22px);
+    font-weight: 650;
+  }
+
+  .project-motion-tile small {
+    bottom: 12px;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 12px;
+  }
+
   .focus-grid {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -1069,18 +1313,18 @@ const focusWorks = billboardSlides.slice(0, 5);
     }
 
     .concept-stage {
-      min-height: 560px;
+      height: 700px;
+      min-height: 700px;
     }
 
     .concept-mosaic {
-      grid-template-rows: repeat(4, minmax(0, 1fr));
-      gap: 8px;
-      padding: 14px 0;
+      grid-template-rows: repeat(3, minmax(0, 1fr));
+      gap: 6px;
+      padding: 8px 0;
     }
 
     .mosaic-tile {
-      flex-basis: 210px;
-      min-height: 96px;
+      flex-basis: 420px;
       border-radius: 8px;
     }
 
@@ -1101,6 +1345,17 @@ const focusWorks = billboardSlides.slice(0, 5);
       padding-top: 28px;
     }
 
+    .project-motion-wall {
+      margin-top: 20px;
+      margin-bottom: 24px;
+      padding: 12px 0;
+    }
+
+    .project-motion-tile {
+      flex-basis: 270px;
+      min-height: 122px;
+    }
+
     .focus-grid {
       grid-template-columns: 1fr;
     }
@@ -1114,6 +1369,7 @@ const focusWorks = billboardSlides.slice(0, 5);
     }
 
     .mosaic-track,
+    .project-motion-track,
     .billboard-slide.is-active img {
       animation: none;
       transform: none;
